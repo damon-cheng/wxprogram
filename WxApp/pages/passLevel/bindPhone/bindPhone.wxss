@@ -1,0 +1,85 @@
+/* pages/passLevel/bindPhone/bindPhone.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.page__content {
+  position: relative;
+  overflow: hidden;
+}
+
+.mod__box {
+  position: relative;
+  margin-top: 20rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #d6d6db;
+  border-bottom: 2rpx solid #d6d6db;
+}
+
+.mod__box::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 40rpx;
+  width: 100%;
+  top: 114rpx;
+  border-top: 2rpx solid #d6d6db;
+}
+
+.mod__title {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  height: 114rpx;
+  line-height: 114rpx;
+}
+
+.mod__legend {
+  width: 200rpx;
+}
+
+.mod__input input {
+  height: 114rpx;
+  line-height: 114rpx;
+}
+
+.code__box {
+  position: absolute;
+  z-index: 1000;
+  padding: 0 40rpx 0 60rpx;
+  right: 0;
+  color: #1ea0fa;
+  text-align: right;
+}
+
+.auto-box {
+  height: 114rpx;
+  line-height: 114rpx;
+  position: absolute;
+  z-index: 1000;
+  padding: 0 40rpx 0 60rpx;
+  right: 0;
+  color: #1ea0fa;
+  text-align: right;
+  background-color: transparent;
+  outline: none;
+}
+
+button::after {
+  border: none;
+}
+
+.bind__btn {
+  margin-top: 82rpx;
+  padding: 0 125rpx;
+}
+
+.bind__btn button {
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #1ea0fa;
+  border-radius: 10rpx;
+}

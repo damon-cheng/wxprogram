@@ -1,0 +1,279 @@
+page {
+  background-color: #edf0f5;
+}
+
+.check__tab {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  height: 140rpx;
+  background-color: #1ea0fa;
+  padding: 0 55rpx;
+}
+
+.check__tab-items {
+  font-size: 28rpx;
+  color: #b2dfff;
+  width: 300rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-radius: 34rpx;
+  margin-top: 36rpx;
+  text-align: center;
+  border: 4rpx solid #178fe6;
+  background-color: #178fe6;
+}
+
+.currented {
+  color: #fff;
+  border-color: #fff;
+  background-color: #1ea0fa;
+}
+
+.show {
+  display: block;
+  text-align: center;
+  line-height: 200rpx;
+}
+
+.hidden {
+  display: none;
+  text-align: center;
+  line-height: 200px;
+}
+
+.check__body {
+  padding: 0 20rpx;
+}
+
+/*题库 Start*/
+
+.bank__body {
+  position: relative;
+}
+
+.area__body {
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-shadow: 0 0 15rpx rgba(184, 197, 204, 0.1);
+}
+
+.bank__wrap {
+  height: auto;
+  line-height: 1;
+  flex-direction: column;
+}
+
+.bank__title {
+  display: block;
+  font-size: 32rpx;
+  color: #000;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0 40rpx;
+  text-align: left;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.bank__box {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  padding: 8rpx 30rpx 60rpx;
+}
+
+.bank__items {
+  width: 143rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #1ea0fa;
+  margin: 28rpx 10rpx 0;
+  border-radius: 34rpx;
+  box-shadow: 7rpx 8rpx 12rpx rgba(30, 102, 250, 0.2);
+}
+
+.currentItems {
+  color: #fff;
+  background-color: #1ea0fa;
+}
+
+.area__items {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0 40rpx;
+  overflow: hidden;
+}
+
+.area__items-textarea {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  padding: 30rpx 40rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.gd-textarea {
+  /* height:108rpx;
+  line-height:108rpx; */
+}
+
+.area__items::after,
+.area__items-textarea::after {
+  content: "";
+  position: absolute;
+  left: 40rpx;
+  bottom: 0;
+  width: calc(100% + 40rpx);
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.area__items:last-child::after {
+  height: 0;
+}
+
+.area__title {
+  font-size: 32rpx;
+  color: #000;
+  margin-right: 36rpx;
+  text-align: left;
+}
+
+.area__input {
+  font-size: 32rpx;
+  color: #313233;
+  align-self: center;
+  text-align: left;
+  flex: 1 1 auto;
+  margin-right: 30rpx;
+}
+
+.area__textarea {
+  font-size: 32rpx;
+  color: #313233;
+  line-height: 48rpx;
+  text-align: left;
+  /* padding: 30rpx 0; */
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.area__end {
+  font-size: 32rpx;
+  color: #b3b3b3;
+}
+
+.choose__arrow {
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+  bottom: 0;
+  width: 60rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/bank/drop-down@1x.png");
+  background-size: 20rpx 34rpx;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .choose__arrow {
+    background-image: url(http://cgstatic.wjx.cn/images/bank/drop-down@2x.png);
+  }
+}
+
+.choose__bank {
+  width: 90rpx;
+  background-position: 30rpx center;
+}
+
+.area__switch-items {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0 40rpx;
+}
+
+.area__switch-section {
+  border-top: 2rpx solid #e5e5e5;
+}
+
+/* .area__icon {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #b8bbcc;
+  border-radius: 50%;
+  align-self: center;
+  margin-right: 10rpx;
+} */
+
+.addBorder {
+  font-size: 28rpx;
+}
+
+.addBorder::before {
+  content: "";
+  position: absolute;
+  left: 40rpx;
+  top: 0;
+  width: calc(100% + 40rpx);
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.col_o {
+  color: #1ea0fa;
+}
+
+.submit-btn {
+  margin-top: 32rpx;
+  border-radius: 16rpx;
+  background-color: #1ea0fa !important;
+  box-shadow: 0 8rpx 24rpx rgba(30, 123, 250, 0.3);
+}
+
+.gobank-btn {
+  color: #1ea0fa !important;
+  margin-top: 32rpx;
+  border: 2rpx solid #e5e5e5;
+  border-radius: 16rpx;
+  background-color: #fff !important;
+}
+
+.input_Date_new {
+  font-size: 32rpx;
+  width: 300rpx !important;
+}
+
+.col_80 {
+  color: #b3b3b3;
+}
+
+/*题库 End*/
+
+
+.voice-des {
+  position: relative;
+  top: -30rpx;
+}
+
+.note-bank-tit {
+  margin-right: 30rpx;
+}
+
+
+.note-bank-des {
+  position: absolute;
+  top: 0rpx;
+  right: 0;
+}

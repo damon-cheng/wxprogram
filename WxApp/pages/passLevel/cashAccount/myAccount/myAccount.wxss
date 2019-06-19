@@ -1,0 +1,285 @@
+/* pages/passLevel/cashAccount/myAccount/myAccount.wxss */
+
+page {
+  background-color: #edf0f5;
+}
+
+.account__wrap {
+  position: relative;
+}
+
+.account__nav {
+  position: relative;
+  top: -2rpx;
+  width: 100%;
+  height: 260rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/account/bg@1x.png");
+  background-size: cover;
+}
+
+.account__panel {
+  position: absolute;
+  top: 40rpx;
+  left: 20rpx;
+  right: 20rpx;
+  height: 396rpx;
+  background-color: #fff;
+  background-image: url("http://cgstatic.wjx.cn/images/account/texture@1x.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 710rpx 124rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 0 16rpx rgba(62, 141, 255, 0.4);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .account__nav {
+    background-image: url("http://cgstatic.wjx.cn/images/account/bg@2x.png");
+  }
+
+  .account__panel {
+    background-image: url("http://cgstatic.wjx.cn/images/account/texture@2x.png");
+  }
+}
+
+.account__avatars {
+  overflow: hidden;
+  text-align: center;
+}
+
+.avatars-icon {
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 40rpx;
+  border-radius: 50%;
+}
+
+.user__info {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.text-icon-m {
+  position: relative;
+  top: 4rpx;
+  left: 4rpx;
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/account/male@1x.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 28rpx 28rpx;
+}
+
+.text-icon-f {
+  position: relative;
+  top: 4rpx;
+  left: 4rpx;
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/account/female@1x.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 28rpx 28rpx;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .text-icon-m {
+    background-image: url("http://cgstatic.wjx.cn/images/account/male@2x.png");
+  }
+  .text-icon-f {
+    background-image: url("http://cgstatic.wjx.cn/images/account/female@2x.png");
+  }
+}
+
+.account__menu {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.account__amount {
+  text-align: center;
+}
+
+.money-box {
+  font-size: 40rpx;
+  color: #8a8d99;
+  line-height: 44rpx;
+  font-weight: bold;
+}
+
+.balance-box {
+  display: flex;
+  display: -webkit-flex;
+  line-height: 32rpx;
+}
+
+.account-word {
+  font-size: 28rpx;
+  color: #a7acca;
+}
+
+.widhDraw-btn {
+  align-self: center;
+  position: relative;
+  top: -2rpx;
+  width: 70rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border: 1px solid #1ea0fa;
+  font-size: 24rpx;
+  color: #1ea0fa;
+  border-radius: 22rpx;
+  text-align: center;
+  display: inline-block;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+  padding: 0;
+  box-sizing: content-box;
+  background-color: transparent;
+}
+
+.account__service {
+  position: relative;
+  text-align: center;
+}
+
+.service-icon {
+  position: relative;
+  top: 14rpx;
+  width: 44rpx;
+  height: 44rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/account/customer-service@1x.png");
+  background-repeat: no-repeat;
+  background-size: 44rpx 44rpx;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+button.service-icon::after {
+  border:none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .service-icon {
+    background-image: url("http://cgstatic.wjx.cn/images/account/customer-service@2x.png");
+  }
+}
+
+.record-empty {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8rpx;
+  height: 556rpx;
+}
+
+.empty-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.record__content {
+  margin-top: 200rpx;
+  padding: 0 20rpx 20rpx;
+}
+
+.title {
+  display: block;
+  font-size: 28rpx;
+  color: #a1a5b3;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+}
+
+.null-icon {
+  width: 156rpx;
+  height: 136rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/account/null-icon@1x.png");
+  background-repeat: no-repeat;
+  background-size: 156rpx 136rpx;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .null-icon {
+    background-image: url("http://cgstatic.wjx.cn/images/account/null-icon@2x.png");
+  }
+}
+
+.empty-word {
+  font-size: 28rpx;
+  color: #b8bccc;
+  margin-top: 25rpx;
+}
+
+.record-body {
+  border-radius: 16rpx;
+  background-color: #fff;
+}
+
+.record-items {
+  overflow: hidden;
+  padding: 0 40rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.record-items:last-child {
+  border-bottom: none;
+}
+
+.items-name, .items-time {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.items-name {
+  margin: 24rpx 0 10rpx;
+}
+
+.items-time {
+  margin-bottom: 24rpx;
+}
+
+.cg-title {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.cg-answer {
+  font-size: 28rpx;
+  color: #1ea0fa;
+}
+
+.cg-time {
+  font-size: 24rpx;
+  color: #a1a5b3;
+}
+
+.cg-date {
+  font-size: 24rpx;
+  color: #b8bccc;
+}
+
+.income-expenses-details {
+  font-size: 24rpx;
+  color: #979ba8;
+  width: 140rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border: 2rpx solid #d5d7e2;
+  border-radius: 22rpx;
+}
+
+.money-box-tit {
+  font-size:28rpx;
+  color:#a7acca;
+}

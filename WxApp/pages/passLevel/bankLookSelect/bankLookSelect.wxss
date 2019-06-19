@@ -1,0 +1,111 @@
+page {
+  background-color: #eceef8;
+}
+
+.search-pancel-wrap {
+  margin: 0 28rpx 128rpx;
+}
+
+.search-pancel-topic {
+  position: relative;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+}
+
+.topic-title {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  padding: 30rpx 85rpx 30rpx 40rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.search-checkbox {
+  position: absolute;
+  right: 40rpx;
+  top: 30rpx;
+}
+
+.delete-topic {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.topic-body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  padding: 0 40rpx 32rpx;
+}
+
+.topic-body-items {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 15rpx;
+}
+
+.search-fixed-box {
+  display: flex;
+  display: -webkit-flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-top: 2rpx solid #e0e0e0;
+  background-color: #fff;
+}
+
+.isIphoneXStyle {
+  height: 130rpx;
+  line-height: 130rpx;
+}
+
+.finish-progress {
+  display: flex;
+  display: -webkit-flex;
+  width: 50%;
+  text-align: center;
+}
+
+.look-icon {
+  width: 32rpx;
+  height: 32rpx;
+  align-self: center;
+  margin-bottom: 10rpx;
+}
+
+.finish-submit {
+  width: 50%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #1ea0fa;
+}
+
+.selected-box {
+  width: 50%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.selected-box text {
+  font-size: 20rpx;
+  color: #737680;
+  align-self: center;
+  line-height: 1;
+}
+
+.selectedX-box text {
+  margin-bottom: 25rpx;
+}
+
+.selected-box .current-topic {
+  font-size: 32rpx;
+  color: #1ea0fa;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,30 @@
+<view class="category__wrap">
+  <view class="items" bindtap='comprehensiveTrigger'>
+    <view class="items-icon comprehensive"></view>
+    <text>综合</text>
+  </view>
+  <view class="items" bindtap='historyTrigger'>
+    <view class="items-icon history"></view>
+    <text>历史</text>
+  </view>
+  <view class="items" bindtap='geographyTrigger'>
+    <view class="items-icon geography"></view>
+    <text>地理</text>
+  </view>
+  <view class="items" bindtap='literaryTrigger'>
+    <view class="items-icon literary"></view>
+    <text>文学</text>
+  </view>
+  <view class="items" bindtap='brainTrigger'>
+    <view class="items-icon brain"></view>
+    <text>脑力</text>
+  </view>
+  <view class="items" bindtap='televisionTrigger'>
+    <view class="items-icon television"></view>
+    <text>影视</text>
+  </view>
+  <view class="items" bindtap='sportsTrigger'>
+    <view class="items-icon sports"></view>
+    <text>体育</text>
+  </view>
+</view>

@@ -1,0 +1,93 @@
+<!--pages/passLevel/setOption/setOption.wxml-->
+<view class="page">
+  <view class="setting__box">
+    <!-- <view class="setting__tit">设置</view> -->
+    <view class="setting__container">
+      <view class="section">
+        <view class="items__tit">每题作答时间(秒)</view>
+        <view class="items__set">
+          <input placeholder="填写时间" value='{{time}}' bindblur='setTime' type="number" />
+        </view>
+      </view>
+      <picker bindchange="bindPickerTimes" value="{{TimesIndex}}" range="{{TimesArray}}">
+        <view class="section">
+          <view class="items__tit">同一微信用户允许答题次数</view>
+          <view class="items__set">
+            <text wx:if="{{!maxAnswerTime}}" class="">{{TimesArray[TimesIndex]}}</text>
+            <text wx:if="{{maxAnswerTime}}" class="">{{maxAnswerTime}}</text>
+          </view>
+        </view>
+      </picker>
+      <view class="section" hidden="{{refId !== null && refId.length > 0 }}">
+        <view class="items__tit">选项随机</view>
+        <view class="body-view">
+          <switch checked="{{isRandom}}" bindchange="randomChange" />
+        </view>
+      </view>
+      <view class="section" hidden="{{refId !== null && refId.length > 0}}">
+        <view class="items__tit">题目随机</view>
+        <view class="body-view">
+          <switch checked="{{isExtractQuestionRandom}}" bindchange="randomQuaChange" />
+        </view>
+      </view>
+      <view class="section" hidden="{{refId !== null && refId.length > 0}}" wx:if="{{isExtractQuestionRandom}}">
+        <view class="items__tit leftFlex">总题数
+          <input disabled value='{{questions.length}}' type="number" />
+        </view>
+        <view class="items__set">
+          <text>随机抽取</text>
+          <input style='width:100rpx;' placeholder="{{questions.length}}" value='{{extractQuestionNumber}}' bindblur='setQuaNum' type="number" />
+          <text>道题目</text>
+        </view>
+      </view>
+      <view class="section">
+        <view class="items__tit">开始时间</view>
+        <view class="items__set">
+          <picker disabled="{{openStatus==1}}" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+            <text wx:if="{{!nostartTime}}" class="{{nostartTime?'input_Date_new':'input_Date_new col_80'}}">点击设置</text>
+            <text wx:if="{{nostartTime}}" class="input_Date_new">{{nostartTime}}</text>
+          </picker>
+          <image class="clearTime" data-id="start" hidden="{{!nostartTime || openStatus==1}}" src='/images/delete@2x.png' bindtap='clearTimeTrigger'></image>
+        </view>
+      </view>
+      <view class="section none-border">
+        <view class="items__tit">结束时间</view>
+        <view class="items__set">
+          <picker disabled="{{openStatus==1}}" mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray1}}">
+            <text wx:if="{{!noendTime}}" class="{{noendTime?'input_Date_new':'input_Date_new col_80'}}">点击设置</text>
+            <text wx:if="{{noendTime}}" class="input_Date_new">{{noendTime}}</text>
+          </picker>
+          <image class="clearTime" data-id="end" hidden="{{!noendTime || openStatus==1}}" src='/images/delete@2x.png' bindtap='clearTimeTrigger'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn__wrap">
+    <view wx:if="{{isProcess == 1}}">
+      <!--我的闯关点击设置按钮显示-->
+      <button class="submit-btn" type="primary" bindtap="ensure">保存</button>
+      <button class="cancel-btn" type="default" bindtap="cancal">取消</button>
+    </view>
+    <view wx:if="{{isProcess != 1}}">
+      <button class="submit-btn" type="primary" bindtap='previewQuestionPaper'>预览</button>
+    </view>
+  </view>
+</view>
+
+
+<view class="modal-frame" hidden='{{isPhoneNumber}}'>
+  <view class="modal-title">提示</view>
+  <view class="modal-word">需要绑定手机号码才能发布闯关</view>
+  <view class="modal-btn">
+    <button bindtap='modalCancelEvent'>取消</button>
+    <button data-id="{{activityId}}" data-shortUrl="{{shortUrl}}" class='modal-submit' open-type="getPhoneNumber" bindtap='getPhoneNumberEvent' bindgetphonenumber="getPhoneNumber">确定</button>
+  </view>
+</view>
+<view class="modal-mask" hidden='{{isPhoneNumber}}'></view>
+
+<view class='new_pass'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type='switchTab'>
+    <text>回到我的闯关</text>
+  </navigator>
+</view>

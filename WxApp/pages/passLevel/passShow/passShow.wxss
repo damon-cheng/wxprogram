@@ -1,0 +1,186 @@
+/* pages/passLevel/passShow/passShow.wxss */
+
+page {
+  height: 100%;
+  min-height: 100%;
+  background-color: #99d5ff;
+}
+
+.page__body {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  padding-bottom: 192rpx;
+  box-sizing: border-box;
+}
+
+.pass__title {
+  font-size: 44rpx;
+  color: #0f2733;
+  font-weight: bold;
+  line-height: 62rpx;
+  text-align: center;
+  padding: 0 60rpx;
+  margin-top: 80rpx;
+}
+
+.pass__des-box {
+  position: relative;
+  margin-top: 150rpx;
+  padding: 0 40rpx;
+}
+
+.pass__des-wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 380rpx;
+  border: 4rpx solid #0f2733;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+
+.pass__foot {
+  position: relative;
+  top: -40rpx;
+  height: 50rpx;
+  border: 4rpx solid #0f2733;
+  border-top: 0;
+  border-radius: 0 0 20rpx 20rpx;
+  background-image: url(http://cgstatic.wjx.cn/images/border-middle@1x.png);
+  background-repeat: repeat;
+  background-size: 8rpx 10rpx;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pass__foot {
+    background-image: url(http://cgstatic.wjx.cn/images/border-middle@2x.png);
+  }
+}
+
+.des__word {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: rgb(15, 39, 51);
+  margin-top: 62rpx;
+  margin-bottom: 60rpx;
+  padding: 0rpx 40rpx;
+}
+
+.btn__start {
+  width: 236rpx;
+  height: 90rpx;
+  text-indent: -99999rpx;
+  margin: 60rpx auto 90rpx;
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-size: 236rpx 90rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/btn@1x.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn__start {
+    background-image: url("http://cgstatic.wjx.cn/images/btn@2x.png");
+  }
+}
+
+.wjx__tech-support {
+  position: absolute;
+  bottom: 35rpx;
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+}
+
+.tip__box {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  background-color: #ffc5c5;
+  border-top: 4rpx solid #0f2733;
+  border-radius: 0 0 20rpx 20rpx;
+  padding: 25rpx 40rpx 30rpx;
+}
+
+.tip__box-preview {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  background-color: #1ea0fa;
+  border-top: 4rpx solid #0f2733;
+  border-radius: 0 0 20rpx 20rpx;
+  padding: 25rpx 40rpx 30rpx;
+}
+
+.tip__word-preview {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: 400;
+}
+
+.tip__prompt {
+  flex: 0 0 auto;
+  width: 52rpx;
+  height: 52rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/error-message@1x.png");
+  background-size: 52rpx 52rpx;
+  background-repeat: no-repeat;
+  margin-top: 2rpx;
+  margin-right: 15rpx;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tip__prompt {
+    background-image: url("http://cgstatic.wjx.cn/images/error-message@2x.png");
+  }
+}
+
+.tip__word {
+  font-size: 32rpx;
+  color: #f00;
+  font-weight: 400;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.release__btn {
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  z-index: 10;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx 20rpx;
+  background-color: #7acc52;
+}
+
+.rank__btn {
+  width: 260rpx;
+  height: 90rpx;
+  margin: 60rpx auto 90rpx;
+  text-indent: -99999rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/view-charts@1x.png");
+  background-size: 260rpx 90rpx;
+  background-repeat: no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .rank__btn {
+    background-image: url("http://cgstatic.wjx.cn/images/view-charts@2x.png");
+  }
+}
+
+.share__btn {
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  z-index: 100;
+}

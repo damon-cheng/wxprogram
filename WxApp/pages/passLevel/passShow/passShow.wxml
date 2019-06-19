@@ -1,0 +1,48 @@
+<!--pages/passLevel/passShow/passShow.wxml-->
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+
+<view class="page__body">
+  <view class="pass__des-box">
+    <view class="pass__des-wrap">
+      <view class="pass__title">{{title}}</view>
+      <view class="des__word">{{description}}</view>
+       <form bindsubmit="startAnswer" report-submit="true">
+        <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" formType="submit" type="primary" class="btn__start" wx:if="{{status != 101}}" hidden='{{statusStart}}'>开始答题</button>
+      </form> 
+      <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type="primary" class="btn__start" wx:if="{{status != 101}}" hidden='{{statusStart}}'>开始答题</button> -->
+
+      <view class="rank__btn" hidden="{{statusRank}}" bindtap='seeRanking'>查看排行榜</view>
+      <view class="tip__box" wx:if="{{tip}}">
+        <view class="tip__prompt"></view>
+        <view class="tip__word">{{tip}}</view>
+      </view>
+      <view class="tip__box-preview " wx:if="{{isPreview == 1}}">
+        <view class="tip__word-preview">提示：预览模式不限制答题次数</view>
+      </view>
+    </view>
+    <view class="pass__foot"></view>
+  </view>
+  <!-- <view class="wjx__tech-support">问卷星 提供技术支持</view> -->
+</view>
+
+<view class='new_pass' hidden='{{checkCg}}'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+    <image src="{{url+'/add@2x.png'}}"></image>
+    <text>我也要发起闯关</text>
+  </navigator>
+</view>
+
+<view class='new_pass' wx-if="{{status === 1 && checkTimeStatus != 1 && checkTimeStatus != 2}}">
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type='switchTab'>
+    <text>回到我的闯关</text>
+  </navigator>
+</view>
+
+<view class='new_pass' hidden="{{status == 1}}" style="{{timeExpired}}" bindtap='releaseClick' wx:if="{{isCanPulish}}">
+  <text>此闯关未运行，我要发布</text>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

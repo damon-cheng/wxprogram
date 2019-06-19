@@ -1,0 +1,107 @@
+<!--pages/passLevel/passShow/passShow.wxml-->
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view>
+  <view class="score-rankingList__head">
+    <view class="pd">
+      <view class="group-tit" wx:if="{{groupGId}}"><open-data type="groupName" open-gid="{{openGId}}"></open-data></view>
+      <view wx:else class="tit">排行榜</view> 
+      <view class="lblTitle">{{title}}</view>
+    </view>
+    <image class="cup-pic" src="/images/jinbei@2x.png"></image>
+  </view>
+
+  <view wx:if="{{groupGId || openGId}}" class="nav-tab">
+      <view bindtap='groupRankEvent' class="{{selected1 ? 'currented' : ''}}">群排行榜</view>
+      <view bindtap='totalRankEvent' class="{{selected2 ? 'currented' : ''}}">总排行榜</view>
+  </view>
+  <view class="myself-wrap" wx:if="{{items.length>0 && myRank > 0}}">
+    <view class="myselfRank">
+      <!-- <view class='curRank'>{{myRank}}</view> -->
+      <view class="score-rankingLis__inner">
+        <view class="viewull-left">
+          <image wx:if="{{avatarUrl}}" class='myPic' src='{{avatarUrl}}'></image>
+          <image wx:else class='myPic' src='/images/head-portrait.png'></image>
+          <view class='myMess'>
+            <text class="nametext">{{nickName ? nickName : "匿名"}}</text>
+            <view class="cur-rank-info">
+              <text class="rank-box">排名：{{myRank}}</text>
+              <view>
+                <image class="time-icon" src='/images/small-time@2x.png'></image>
+                <text> {{myCostTime}}s</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="viewull-right">
+          <text class='fs_smail'>答对{{myScore}}题</text>
+        </view>
+      </view>
+    </view>
+    <view class="myselfInfo">{{myMessage}}</view>
+  </view> <!-- 个人排行 -->
+
+  <view class="everyone-wrap {{myRank > 0? '' : 'everyone-top-style'}}">
+    <view class='everyone-rank' wx:if="{{items.length>0}}">
+      <block wx:for="{{items}}">
+        <view class="rank_List">
+          <view class='curRank'>
+            <text>{{item.rank}}</text>
+          </view>
+          <view class="score-rankingLis__inner">
+            <view class="viewull-left">
+              <image src='{{item.avatarUrl}}'></image>
+              <view class='myMess'>
+                <text class="nametext">{{item.nickName}}</text>
+                <view class='ranktext'>
+                  <image class="time-icon" src='/images/small-time@2x.png'></image>
+                  <text class='timed'> {{item.costTime}}s</text>
+                </view>
+              </view>
+            </view>
+            <view class="viewull-right  score-rankingList__score">
+              <text class='fs_smail'>答对{{item.score}}题</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{isCanPublish && items.length != 0}}" bindtap='delData' class='clearData'>
+      清空排行
+    </view>
+  </view> <!-- 所有人排行 -->
+
+
+  <view class='nodatatext' wx:if="{{items.length == 0}}">
+    <image src="{{url+'/null-icon@2x.png'}}"></image>
+    <text>暂无数据</text>
+  </view>
+
+</view>
+
+
+
+<view class='height'></view>
+<view class='new_pass' wx:if="{{isCanPublish}}">
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+    <!-- <image src="{{url+'/add@2x.png'}}"></image> -->
+    <text>回到我的闯关</text>
+  </navigator>
+</view>
+
+<view wx:if="{{!isCanPublish}}" class='new_pass-box'>
+  <view class="new_pass-items">
+    <navigator url='/pages/passLevel/index' open-type="switchTab">
+      <!-- <image src="{{url+'/add@2x.png'}}"></image> -->
+      <text>我也要发起闯关</text>
+    </navigator>
+  </view>
+  <view class="new_pass-items">
+    <button class="share__btn" open-type="share">邀请好友闯关</button>
+  </view>
+
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

@@ -1,0 +1,134 @@
+<import src="../../lib/wetoast/wetoast.wxml" />
+
+<view wx:if="{{items.length !== 0}}" class="hasData weui-cells_after-title ">
+  <view class='Pass_through_list'>
+    <block wx:for="{{items}}">
+      <scroll-view class='item' data-activeid="{{item.activityId}}" scroll-left="{{item.slider}}" bindscrolltolower="slider" bindscrolltoupper="closeSlider" upper-threshold="50" lower-threshold="50" scroll-x bindtap='showMore'>
+        <view class='listCont'>
+          <view class='leftCont' style='padding-right: 26rpx'>
+            <text class="status {{item.status === 1  ? 'icon run' : 'icon'}}"></text>
+            <text class='left-text'>{{item.name + " (ID:" + item.activityId +")"}}</text>
+            <view style='float: right'>
+              <image class="more-icon" src="/images/more@3x.png"></image>
+            </view>
+            <text class='right-num'>{{item.currentJoinedPersonTimes}}</text>
+          </view>
+
+          <!-- <view class="posit">
+            <view class="editor br" data-status='{{item.status}}' data-activeid="{{item.activityId}}" catchtap="cloneQuestionnaire">复制</view>
+            <view class="editor" data-sid='{{item.shortUrl}}' id="{{item.activityId}}" data-status='{{item.status}}' catchtap="stopSurvey">{{item.status==1?'暂停':'发布'}}</view>
+            <view class="del" data-activeid="{{item.activityId}}" catchtap="deleteQuestionnaire">删除</view>
+          </view> -->
+        </view>
+
+      </scroll-view>
+      <!-- <view class="tab_box" wx:if="{{item.showMore}}">
+        <view class='current' data-refid="{{item.refId}}" data-activeid="{{item.activityId}}" data-status='{{item.status}}' bindtap='editQua'>
+          <image src="/images/editor-hover@2x.png"></image>
+          <text>编辑</text>
+        </view>
+        <label class='current'>
+          <button class='current shareBtn' bindtap='share' id="{{item.activityId}}" data-shortUrl="{{item.shortUrl}}" data-status="{{item.status}}" data-name="{{item.name}}"></button>
+          <image class="preview-blue" src="/images/share-hover@2x.png"></image>
+          <text>分享</text>
+        </label>
+        <navigator class='current' url='/pages/passLevel/rank/rank?shortUrl={{item.shortUrl}}&activityId={{item.activityId}}'>
+          <image src="/images/list@2x.png"></image>
+          <text>排行榜</text>
+        </navigator>
+        <view class='current' bindtap='goRed' id="{{item.activityId}}">
+          <image src="/images/red-envelope@2x.png"></image>
+          <text>红包</text>
+        </view>
+        <navigator class='current' url="/pages/passLevel/setOption/setOption?isProcess=1&activityId={{item.activityId}}">
+          <image src="/images/set@2x.png"></image>
+          <text>设置</text>
+        </navigator>
+      </view> -->
+    </block>
+  </view>
+
+</view>
+<view class="indexWrap" wx:if="{{items.length === 0 }}">
+  <view class="weui-load__wrap">
+    <view class="weui-img__box"></view>
+    <text class="no-data">暂无数据</text>
+    <view class="start-btn">
+      <navigator hover-class="none" url="chooseCheckPoints/chooseCheckPoints" open-type='switchTab'>立即发起闯关</navigator>
+    </view>
+    <view hidden='{{!isJoinSquare}}' class="square-btn" bindtap='joinSquareEvent'>参与闯关体验</view>
+  </view>
+</view>
+<!-- <button hover-class='contact_h' class='contact' open-type="contact"></button> -->
+
+<view class="modal-frame" hidden='{{isPhoneNumber}}'>
+  <view class="modal-title">提示</view>
+  <view class="modal-word">需要绑定手机号码才能发布闯关</view>
+  <view class="modal-btn">
+    <button bindtap='modalCancelEvent'>取消</button>
+    <button data-id="{{panelActivityId}}" data-shortUrl="{{panelShortUrl}}" class='modal-submit' open-type="getPhoneNumber" bindtap='getPhoneNumberEvent' bindgetphonenumber="getPhoneNumber" >确定</button>
+  </view>
+</view>
+<view class="modal-mask" hidden='{{isPhoneNumber}}'></view>
+<view class="mask" catchtouchmove="notAllowMoveEvent" bindtap='yourSelfCloseEvent' hidden='{{isOpenPanel}}'></view>
+<view class="cg-item-panel" catchtouchmove="notAllowMoveEvent" hidden='{{isOpenPanel}}'>
+  <text class="panel-tit">{{panelName}}</text>
+  <view class="panel-close" catchtap='panelCloseEvent'>关闭</view>
+  <view class="panel-content">
+    <view class="panel-line">
+      <view class="panel-item" data-refid="{{panelRefId}}" data-activeid="{{panelActivityId}}" data-status='{{panelStatus}}' catchtap='editQua'>
+        <view class="panel-pic">
+          <image src="/images/editor@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">编辑</text>
+      </view>
+       <view class="panel-item" id="{{panelActivityId}}" data-shortUrl="{{panelShortUrl}}" data-status="{{panelStatus}}" data-name="{{panelName}}" catchtap='share'>
+        <view class="panel-pic">
+          <image src="/images/share@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">分享</text>
+      </view> 
+      <view class="panel-item" data-shortUrl="{{panelShortUrl}}" data-activeid="{{panelActivityId}}" catchtap='lookRankEvent'>
+        <view class="panel-pic">
+          <image src="/images/list@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">排行榜</text>
+      </view>
+      <view class="panel-item" id="{{panelActivityId}}" catchtap='goRed'>
+        <view class="panel-pic">
+          <image src="/images/red@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">红包</text>
+      </view>
+    </view>
+    <view class="panel-line">
+      <view class="panel-item" data-activeid="{{panelActivityId}}" catchtap='settingEvent'>
+        <view class="panel-pic">
+          <image src="/images/set@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">设置</text>
+      </view>
+      <view class="panel-item" data-status='{{panelStatus}}' data-activeid="{{panelActivityId}}" catchtap="cloneQuestionnaire">
+        <view class="panel-pic">
+          <image src="/images/copy@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">复制</text>
+      </view>
+      <view class="panel-item" data-sid='{{panelShortUrl}}' id="{{panelActivityId}}" data-status='{{panelStatus}}' catchtap="stopSurvey">
+        <view class="panel-pic">
+          <image src="/images/release@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">{{panelStatus==1?'暂停':'发布'}}</text>
+      </view>
+      <view class="panel-item" data-activeid="{{panelActivityId}}" catchtap="deleteQuestionnaire">
+        <view class="panel-pic">
+          <image src="/images/del@3x.png" class="panel-icon"></image>
+        </view>
+        <text class="panel-word">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

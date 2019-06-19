@@ -1,0 +1,252 @@
+page {
+  background-color: #eceef8;
+}
+
+.search-pancel-form {
+  display: flex;
+  display: -webkit-flex;
+  height: 88rpx;
+  padding-left: 20rpx;
+  padding-right: 28rpx;
+  background-color: #fff;
+}
+
+.search-bar-box {
+  display: flex;
+  display: -webkit-flex;
+  align-self: center;
+  justify-content: center;
+  height: 60rpx;
+  padding-left: 20rpx;
+  border-radius: 8rpx;
+  background-color: #eeeff3;
+  flex: 1 1 auto;
+}
+
+.search-icon {
+  width: 32rpx;
+  height: 32rpx;
+  align-self: center;
+  margin-right: 10rpx;
+}
+
+.search-bar-input {
+  font-size: 32rpx;
+  color: #323233;
+  height: 60rpx;
+  flex: 1 1 auto;
+}
+
+.search-clear {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  padding: 0 20rpx;
+}
+
+.search-clear icon {
+  align-self: center;
+}
+
+.search-submit {
+  width: 112rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 60rpx;
+  align-self: center;
+  border-radius: 8rpx;
+  background-color: #1ea0fa;
+  text-align: center;
+  margin-left: 12rpx;
+}
+
+.search-pancel-content {
+}
+
+.search-pancel-cut {
+  border-top: 4rpx solid #e5e5e5;
+}
+
+.search-pancel-items {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0 20rpx 0 28rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+  background-color: #fff;
+}
+
+.search-items-title {
+  font-size: 32rpx;
+  color: #323233;
+  font-weight: bold;
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 20rpx;
+}
+
+.search-items-details {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.arrow-icon-box {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+}
+
+.arrow-icon-box image {
+  align-self: center;
+}
+
+.arrow-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.search-total {
+  font-size: 28rpx;
+  color: #969799;
+  width: 100rpx;
+  text-align: right;
+}
+
+.search-pancel-footer {
+  font-size: 28rpx;
+  color: #afb0b3;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.search-pancel-wrap {
+  margin: 128rpx 28rpx;
+}
+
+.isIphoneXWrap {
+  margin: 128rpx 28rpx 0;
+  padding-bottom: 150rpx !important;
+}
+
+.search-pancel-topic {
+  position: relative;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+}
+
+.topic-title {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  padding: 30rpx 85rpx 30rpx 40rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.search-checkbox {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background-color: #1ea0fa;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  color: #fff;
+}
+
+.topic-body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  padding: 0 40rpx 32rpx;
+}
+
+.topic-body-items {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 15rpx;
+}
+
+.search-fixed-box {
+  display: flex;
+  display: -webkit-flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-top: 2rpx solid #e0e0e0;
+  background-color: #fff;
+}
+
+.isIphoneXStyle {
+  height: 130rpx;
+  line-height: 130rpx;
+}
+
+.finish-progress {
+  display: flex;
+  display: -webkit-flex;
+  width: 50%;
+  text-align: center;
+}
+
+.look-icon {
+  width: 40rpx;
+  height: 32rpx;
+  align-self: center;
+  margin-bottom: 10rpx;
+}
+
+.finish-submit {
+  width: 50%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #1ea0fa;
+}
+
+.selected-box {
+  width: 50%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.selected-box text {
+  font-size: 20rpx;
+  color: #737680;
+  align-self: center;
+  line-height: 1;
+}
+
+.selectedX-box text {
+  margin-bottom: 25rpx;
+}
+
+.selected-box .current-topic {
+  font-size: 32rpx;
+  color: #1ea0fa;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.pancel-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}

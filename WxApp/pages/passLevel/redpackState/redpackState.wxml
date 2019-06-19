@@ -1,0 +1,37 @@
+<view wx:if="{{showPage}}" class='red_state'>
+  <!-- <view class='head'>
+  <view class='redStatus'>
+    <text bindtap='granted' class="{{status==1?'cur':''}}">已发放</text>
+    <text bindtap='nogrant' class="{{status==0?'cur':''}}">待发放</text>
+  </view>
+</view> -->
+
+<block wx:for="{{items}}">
+  <view class='item'>
+    <view class='left'>
+      <image class='headPic' src='{{item.avatarurl}}'></image>
+      <view class='datail'>
+        <text class='name'>{{item.nickName}}</text>
+        <view class='red_num'>
+          <text>领取了</text>
+          <text class='col_r'>￥{{item.amount}}元</text>
+        </view>
+      </view>
+    </view>
+    <text class='date'>{{item.awardDate}}</text>
+  </view>
+  </block>
+</view>
+
+<view class='nodatatext' wx:if="{{items.length == 0}}">
+    <image src="{{url+'/null-icon@2x.png'}}"></image>
+    <text>暂无数据!</text>
+</view>
+
+<view class='height'></view>
+<view class='new_pass'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+  <image src="{{url+'/add@2x.png'}}"></image>
+    <text>回到我的闯关</text>
+  </navigator>
+</view>

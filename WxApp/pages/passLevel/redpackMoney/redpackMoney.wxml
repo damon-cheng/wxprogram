@@ -1,0 +1,68 @@
+<view class="red-set">
+  <form action="">
+    <view class='moneyAndnum'>
+      <view class='item'>
+        <text class='tit'>红包总金额</text>
+        <view class='inputBox'>
+          <input type='number' placeholder='填写金额' bindinput='bindMoney' value='{{money}}'></input>
+          <text>元</text>
+        </view>
+      </view>
+      <view class='item'>
+        <text class='tit'>红包总个数</text>
+        <view class='inputBox'>
+          <input type='number' placeholder='填写个数' bindinput='bindQua' value='{{quantity}}'></input>
+          <text>个</text>
+        </view>
+
+      </view>
+      <view class='everyRedState'>
+        <block wx:if="{{isRandomExtraction}}">
+          <text>每个红包金额随机, </text>
+          <text class='col_o' bindtap='norandom'>改为金额固定</text>
+        </block>
+        <block wx:if="{{!isRandomExtraction}}">
+          <text>每个红包金额固定, </text>
+          <text class='col_o' bindtap='random'>改为金额随机</text>
+        </block>
+      </view>
+    </view>
+
+
+    <view class='moneyAndnum'>
+      <picker bindchange="selChance" value="{{index}}" range="{{array}}">
+        <view class='item'>
+          <text>中奖概率</text>
+          <view class='inputBox'>
+            <input disabled value='100%' value='{{array[index]}}'></input>
+            <text class='selProbably'></text>
+          </view>
+        </view>
+      </picker>
+
+    </view>
+
+    <view class='pay_box'>
+      <block wx:if='{{money}}'>
+        <view class='totalMoney'>
+          <text class='Symbol'>需支付￥</text>
+          <text>{{account > money ? 0 : money- account + lv }}</text>
+        </view>
+        <text wx:if="{{money-account>0}}" class='charg'>账户余额抵扣{{account}}元，还需支付{{money-account +lv}}元，包含{{lv}}元手续费</text>
+        <text wx:if="{{money-account>0}}" class='charg'>（收取2%手续费，不足1元的部分向上取整按1元收取）</text>
+        <text wx:if="{{money-account<=0}}" class='charg'>账户余额抵扣:{{money}}元</text>
+
+      </block>
+      <button bindtap='pay' class='btn_pay' hover-class="btn_pay_active">充值红包</button>
+    </view>
+  </form>
+</view>
+
+
+<view class='height'></view>
+<view class='new_pass'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+  <image src="{{url+'/add@2x.png'}}"></image>
+    <text>回到我的闯关</text>
+  </navigator>
+</view>

@@ -1,0 +1,386 @@
+page {
+  background: #f4f4f4;
+  height: 100%;
+}
+
+.indexWrap {
+  height: 100%;
+}
+
+.weui-load__wrap {
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.shareBtn {
+  display: none !important;
+}
+
+.weui-img__box {
+  width: 458rpx;
+  height: 382rpx;
+  background-size: 458rpx 382rpx;
+  background-image: url("http://cgstatic.wjx.cn/images/not-confirm@1x.png");
+}
+
+.no-data {
+  font-size: 40rpx;
+  line-height: 1;
+  color: #353535;
+  margin-top: 40rpx;
+}
+
+.start-data {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #888;
+  margin-top: 40rpx;
+}
+
+.hasData {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.start-btn {
+  width: 360rpx;
+  height: 70rpx;
+  line-height: 68rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #1ea0fa;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #1ea0fa;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.square-btn {
+  width: 360rpx;
+  height: 70rpx;
+  line-height: 68rpx;
+  font-size: 32rpx;
+  color: #1ea0fa;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #1ea0fa;
+}
+
+.Pass_through_list {
+  overflow: hidden;
+  background: #fff;
+}
+
+.Pass_through_list .item {
+  height: 136rpx;
+  line-height: 136rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.Pass_through_list .item:last-child {
+  border-bottom: none;
+}
+
+.listCont {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 0 0 24rpx;
+}
+
+.leftCont {
+  width: 100%;
+}
+
+.posit {
+  flex-shrink: 0;
+  display: flex;
+}
+
+.editor, .del {
+  width: 70px;
+  background: #e1e1e6;
+  text-align: center;
+  font-size: 32rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.del {
+  background: #e64340;
+  color: #fff;
+}
+
+.br {
+  border-right: 1px solid #fff;
+}
+
+.Pass_through_list .item .icon {
+  display: inline-block;
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 15rpx;
+  background: #e5e5e5;
+  margin-right: 16rpx;
+}
+
+.Pass_through_list .item .icon.run {
+  background-color: #5bc902;
+}
+
+.Pass_through_list .item .left-text {
+  color: #353535;
+  font-size: 34rpx;
+}
+
+.Pass_through_list .item .right-num {
+  float: right;
+  margin-right: 24rpx;
+  color: #888;
+  font-size: 28rpx;
+}
+
+.tab_box {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  height: 119rpx;
+  background: #fafbff;
+}
+
+.preview-blue {
+  width: 44rpx !important;
+  height: 44rpx !important;
+  margin-bottom: 7rpx !important;
+}
+
+.tab_box image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 25rpx;
+  margin-bottom: 11rpx;
+}
+
+.tab_box .current {
+  color: #1ea0fa;
+  font-size: 24rpx;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new_pass {
+  position: fixed;
+  z-index: 50000;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.new_pass image {
+  vertical-align: middle;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.contact {
+  position: fixed;
+  z-index: 5000000;
+  right: 20rpx;
+  bottom: 100px;
+  width: 80rpx;
+  height: 80rpx;
+  background: url(http://cgstatic.wjx.cn/images/btn-nor@2x.png);
+  background-size: cover;
+}
+
+button::after {
+  border: none;
+}
+
+.contact_h {
+  background: url(http://cgstatic.wjx.cn/images/btn-pre@2x.png);
+  background-size: cover;
+}
+
+/* 优化 Start */
+
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cg-item-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 548rpx;
+  z-index: 11;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.panel-tit {
+  font-size: 24rpx;
+  color: #000;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #d7d8db;
+}
+
+.panel-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #737373;
+  text-align: center;
+}
+
+.panel-content {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.panel-line {
+  height: 234rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+}
+
+.panel-item {
+  align-self: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  text-align: center;
+  width: 110rpx;
+  height: 150rpx;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent;
+  line-height: inherit;
+}
+
+.panel-pic {
+  width: 110rpx;
+  height: 110rpx;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+}
+
+.panel-icon {
+  width: 58rpx;
+  height: 58rpx;
+  align-self: center;
+}
+
+.panel-word {
+  font-size: 26rpx;
+  color: #737373;
+  margin-top: 10rpx;
+  display: block;
+}
+
+.more-icon {
+  position: relative;
+  top: 6rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+/* 优化 End */
+
+/* 自定义模态框 Start */
+.modal-frame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550rpx;
+  background-color: #fff;
+  z-index: 99999999;
+  border-radius: 6rpx;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  margin-top: 30rpx;
+}
+
+.modal-word {
+  font-size: 28rpx;
+  color: #888888;
+  margin-top: 10rpx;
+}
+
+.modal-btn {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 15rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.modal-btn button {
+  width: 50%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fff;
+  
+}
+
+.modal-submit {
+  color: #5bc902;
+}
+
+.modal-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  width: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.modal-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 自定义模态框 End */

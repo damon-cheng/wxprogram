@@ -1,0 +1,74 @@
+{
+  "pages": [
+    
+    "pages/passLevel/index",
+    "pages/passLevel/authorizedLoginPage/authorizedLoginPage",
+    "pages/passLevel/transferWx/transferWx",
+    "pages/passLevel/ocrOption/ocrOption",
+    "pages/passLevel/share/share",
+    "pages/passLevel/squareZone/squareZone",
+    "pages/passLevel/setOption/setOption",
+    "pages/passLevel/chooseCheckPoints/chooseCheckPoints",
+    "pages/passLevel/bankCategory/bankCategory",
+    "pages/passLevel/bindPhone/bindPhone",
+    "pages/passLevel/startAnswer/startAnswer",
+    "pages/passLevel/cashAccount/incomeExpensesDetails/incomeExpensesDetails",
+    "pages/passLevel/cashAccount/myAccount/myAccount",
+    "pages/passLevel/cashAccount/balanceWithdraw/balanceWithdraw",
+    "pages/passLevel/passShow/passShow",
+    "pages/passLevel/passFail/passFail",
+    "pages/passLevel/passSuccess/passSuccess",
+    "pages/passLevel/editTitle/editTitle",
+    "pages/passLevel/editQue/editQue",
+    "pages/passLevel/bankSearch/bankSearch",
+    "pages/passLevel/bankLookSelect/bankLookSelect",
+    "pages/passLevel/rank/rank",
+    "pages/passLevel/redpackMoney/redpackMoney",
+    "pages/passLevel/redpackSet/redpackSet",
+    "pages/passLevel/redpackState/redpackState",
+    "pages/passLevel/editQueName/editQueName",
+    "pages/passLevel/editQueName2/editQueName2"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/passLevel/index",
+        "text": "我的闯关",
+        "iconPath": "images/recruit-nor@3x.png",
+        "selectedIconPath": "images/recruit-pre@3x.png"
+      },
+      {
+        "pagePath": "pages/passLevel/chooseCheckPoints/chooseCheckPoints",
+        "text": "新建闯关",
+        "iconPath": "images/increase-nor@3x.png",
+        "selectedIconPath": "images/increase-pre@3x.png"
+      },
+      {
+        "pagePath": "pages/passLevel/cashAccount/myAccount/myAccount",
+        "text": "我的账户",
+        "iconPath": "images/account-nor@3x.png",
+        "selectedIconPath": "images/account-pre@3x.png"
+      }
+    ],
+    "color": "#b8bed6",
+    "selectedColor": "#1ea0fa",
+    "backgroundColor": "#fff"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1ea0fa",
+    "navigationBarTitleText": "问卷星-闯关",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxd947200f82267e58"
+  ]
+}

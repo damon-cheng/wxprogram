@@ -1,0 +1,3 @@
+<view class="page">
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type="default" bindtap="default" hover-class="other-button-hover">同意授权登录</button>
+</view>

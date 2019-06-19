@@ -1,0 +1,31 @@
+<!--pages/passLevel/editQue/editQue.wxml-->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view class="page__content">
+  <form bindsubmit="formSubmit">
+    <view class="mod__box">
+      <view class="mod__title">
+        <view class="mod__legend">绑定手机</view>
+        <view class="mod__input">
+          <input name="mobileNum" value="{{mobileNum}}" placeholder="填写手机号码" type="text" bindinput="changeMobile" />
+        </view>
+        <!-- <button class='auto-box' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button> -->
+      </view>
+      <view class="mod__title">
+        <view class="mod__legend">验证码</view>
+        <view class="mod__input">
+          <input name="codeNum" value="{{codeNum}}" placeholder="输入验证码" type="text" bindinput="changeCode" />
+        </view>
+        <view class='code__box' style="{{againStyle}}" catchtap='getCode'>{{code}}</view>
+      </view>
+    </view>
+
+    <view class="bind__btn">
+        <button type="primary" form-type="submit">绑定</button>
+    </view>
+  </form>
+</view>
+
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

@@ -1,0 +1,41 @@
+<view class="zone-wrap">
+  <view class="zone-nav"></view>
+  <view class="zone-container">
+    <view class="zone-tit">闯关广场</view>
+    <view class="zone-group" wx:if="{{items.length > 0}}">
+      <view class="zone-group-items" wx:for="{{items}}">
+        <view class="items-body">
+          <view class="items-box">
+            <text class="items-tit">{{item.title}}</text>
+            <image src="/images/small-red@2x.png" class="red-icon"></image>
+          </view>
+          <view class="people">
+            <image src="/images/heat@2x.png" class="fire-icon"></image>
+            <text>{{item.joinTimes}}</text>
+          </view>
+        </view>{{item.shortUrl}}
+        <view class="join-btn" id="{{item.shortenUrl}}" bindtap='joinCgZoneEvent'>参与</view>
+      </view>
+    </view>
+    <view class="zone-empty-box" wx:if="{{items.length === 0}}">
+      <view class="null-icon"></view>
+      <view class="empty-word">抱歉，目前暂时没有您可参与的闯关！</view>
+      <navigator hover-class='none' url="/pages/passLevel/cashAccount/myAccount/myAccount" open-type='switchTab'>
+          <view class="empty-word line-word">查看已参与闯关</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{isUnsubscribe}}" class="unsubscribe-box">
+  <text class="unsubscribe-link" bindtap="unsubscribeEvent">退订</text>
+  <text>本页面的更新提醒</text>
+</view>
+
+<view class="fixed-slider">
+  <navigator class="start-btn" hover-class='none' url="/pages/passLevel/index" open-type='switchTab'>
+    <!-- <text>回到我的闯关</text> -->
+    <view>我也要发起闯关</view>
+  </navigator>
+
+</view>

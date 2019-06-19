@@ -1,0 +1,31 @@
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view class="search-pancel-wrap">
+  <view class="search-pancel-topic" wx:for="{{selectedChosenArray}}" wx:for-item="item" wx:for-index="i">
+    <view class="topic-title">{{i + 1}}、{{item.topicObj.title}}</view>
+    <view class="search-checkbox" data-topic="{{item.topicObj.topic}}" bindtap="deleteChosenEvent">
+      <image class="delete-topic" src='/images/delete@3x.png'></image>
+    </view>
+    <view class="topic-body">
+      <text class="topic-body-items" wx:for="{{item.topicObj.items}}" wx:for-item="obj" wx:for-index="j">{{letterArray[j]}}、{{obj.itemTitle}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="search-fixed-box {{isIphoneX ? 'isIphoneXStyle':''}}">
+  <view class="finish-progress">
+    <view class="selected-box {{isIphoneX ? 'selectedX-box':''}}">
+      <text class="current-topic">{{selectedChosenArray.length}}</text>
+      <text>已选题数</text>
+    </view>
+    <view class="selected-box {{isIphoneX ? 'selectedX-box':''}}" bindtap='continueChooseEvent'>
+      <image class="look-icon" src='/images/selection@3x.png'></image>
+      <text>继续选题</text>
+    </view>
+  </view>
+  <view class="finish-submit" bindtap='finishChosenEvent'>完成选题</view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

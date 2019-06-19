@@ -1,0 +1,88 @@
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<!-- <view class="check__tab" hidden="{{activityId}}">
+  <view class="check__tab-items {{selected1 ? 'currented' : ''}}" bindtap="selected1">题库抽题闯关</view>
+  <view class="check__tab-items {{selected2 ? 'currented' : ''}}" bindtap="selected2">自定义闯关</view>
+</view> -->
+
+<view class="check__body">
+  <form>
+    <view hidden="{{!currented && !activityId}}" class="bank__body">
+      <view class="area__body">
+        <view class="area__items">
+          <label class="area__title">闯关名称</label>
+           <input class="area__input" placeholder='请填写闯关名称' value="{{title}}" bindinput='bankInfo' /> 
+          <view class="note__voice note-bank-tit" id="title" bindtouchstart='touchdown' bindtouchend='touchup'>
+            <image class="voice-img" src="/images/voice-item.png"></image>
+          </view>
+          <view class="choose__arrow choose__bank" bindtap='switchDes'></view>
+        </view>
+        <view class="area__items-textarea gd-textarea" wx-if="{{!isSwitchDes}}">
+          <textarea auto-height class="area__textarea" name="description" bindblur="bankDes" placeholder="请填写闯关说明" value="{{description}}" />
+          <view class="note__voice note-bank-des" id="description" bindtouchstart='touchdown' bindtouchend='touchup'>
+            <image class="voice-img" src="/images/voice-item.png"></image>
+          </view>
+        </view>
+
+        <picker bindchange="bindPickerBankTitleNum" value="{{bandNumIndex}}" range="{{bandNumArray}}">
+          <view class="area__items">
+            <view class="area__title">题目数量</view>
+            <view class="area__input">
+              <text class="">{{bandNumArray[bandNumIndex]}}</text>
+            </view>
+            <view class="choose__arrow"></view>
+          </view>
+        </picker>
+        <view class='area__items addBorder'>
+          <text class='area__title'>每题作答时间(秒)</text>
+          <input class="area__input" placeholder="请填写时间" placeholder-style="color:#b3b3b3" value='{{secondsLimit}}' bindblur='setTime' type="number" />
+          <view class="area__end">秒</view>
+        </view>
+      </view><!--end-->
+      <view class="area__body">
+        <view class="bank__wrap">
+          <label class="bank__title">选择题库</label>
+          <view class="bank__box">
+            <view class="bank__items {{index == currentId ? 'currentItems' : ''}}" id="{{index}}" wx:for="{{chooseBankArray}}" bindtap='chooseBankTrigger'>{{chooseBankArray[index].name}}</view>
+          </view>
+        </view>
+      </view><!--end-->
+      <button data-qtype="2" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="submit-btn" type="primary">{{activityId ? "编辑":"创建"}}</button>
+      <button class="gobank-btn" type="primary" hidden="{{activityId}}" bindtap="goSelfTrigger">自定义题目</button>
+    </view>
+
+    <view hidden="{{currented || activityId}}" class="my__body">
+      <view class="area__body">
+        <view class="area__items">
+          <input class="area__input" name="title" bindinput="inputTitle" type="text" placeholder-style="color:#b3b3b3" placeholder="{{placeholderTitle}}" value="{{title}}" />
+          <view class="note__voice" id="title" bindtouchstart='touchdown' bindtouchend='touchup'>
+            <image class="voice-img" src="/images/voice-item.png"></image>
+          </view>
+        </view>
+        <view class="area__items-textarea">
+          <textarea class="area__textarea" name="description" bindblur="inputDescription" placeholder-style="color:#b3b3b3" placeholder="{{placeholderDes}}" value="{{description}}" />
+          <view class="note__voice voice-des" id="description" bindtouchstart='touchdown' bindtouchend='touchup'>
+            <image class="voice-img" src="/images/voice-item.png"></image>
+          </view>
+        </view>
+      </view>
+      <button data-qtype="1" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="submit-btn" type="primary">创建</button>
+      <button class="gobank-btn" type="primary" hidden="{{activityId}}" bindtap="goBankTrigger">从题库创建闯关</button>
+      <button class="gobank-btn" type="primary" bindtap="goWjxProgram">进入问卷星小程序</button>
+    </view>
+  </form>
+</view>
+
+
+<view wx:if="{{isSpeaking}}" class="speak-style">
+  <image class="sound-style" src="/images/voice_icon_speech_sound_1.png"></image>
+  <image wx:if="{{j==2}}" class="sound-style" src="/images/voice_icon_speech_sound_2.png"></image>
+  <image wx:if="{{j==3}}" class="sound-style" src="/images/voice_icon_speech_sound_3.png"></image>
+  <image wx:if="{{j==4}}" class="sound-style" src="/images/voice_icon_speech_sound_4.png"></image>
+  <image wx:if="{{j==5}}" class="sound-style" src="/images/voice_icon_speech_sound_5.png"></image>
+</view>
+
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

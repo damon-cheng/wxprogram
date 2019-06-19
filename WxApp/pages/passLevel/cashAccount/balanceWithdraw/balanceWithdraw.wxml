@@ -1,0 +1,42 @@
+<!--pages/passLevel/passShow/passShow.wxml-->
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view class="account__wrap">
+  <view class="account__nav"></view>
+  <view class="account__panel">
+    <view class="panel__head">
+      <view class="my__title">
+        <image src="/images/my-balance@2x.png" class="balance-icon"></image>
+        <text>我的余额</text>
+      </view>
+      <view class="my__balance">￥{{balance}}</view>
+      <view class="income-expenses-details" bindtap='incomeExpensesDetails'>收支明细</view>
+    </view>
+    <view class="panel__body">
+      <text class="amount-title">可提现金额</text>
+      <form>
+        <view class="amount__input">
+          <view class="symbol">￥</view>
+          <view class="showWithDraw">{{allBalance}}</view>
+          <!-- <input type='number' class="enter" name="amount" value="{{allBalance}}" bindinput='getAmountTrigger'></input>
+          <view class="all" bindtap='allbalanceTrigger'>全部提现</view> -->
+        </view>
+         <view class="amount__prompt">
+           <view style="{{propmtStyle}}">{{defaultPrompt}}</view> 
+          <view>{{fixedPrompt}}</view>
+        </view> 
+        <button class="submit-btn" disabled="{{disabled}}" type="primary" bindtap="submitBalanceTrigger" formType="submit">提现</button>
+      </form>
+    </view>
+  </view>
+</view>
+
+<view class='new_pass'>
+  <navigator url='../myAccount/myAccount' open-type='switchTab'>
+    <text>回到我的账户</text>
+  </navigator>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

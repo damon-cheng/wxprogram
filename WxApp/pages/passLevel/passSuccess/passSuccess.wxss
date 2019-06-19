@@ -1,0 +1,419 @@
+/* pages/passLevel/passSuccess/passSuccess.wxss */
+
+page {
+  background-color: #edf0f5;
+}
+
+.pass__wrap {
+  padding: 0 40rpx;
+}
+
+.pass__nav {
+  position: absolute;
+  top: -2rpx;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 375rpx;
+  background-size: cover;
+}
+
+.pass__success {
+  background-image: url("http://cgstatic.wjx.cn/images/confirm-succ-bg@1x.png");
+}
+
+.pass__fail {
+  background-image: url("http://cgstatic.wjx.cn/images/confirm-failure-bg@1x.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pass__success {
+    background-image: url("http://cgstatic.wjx.cn/images/confirm-succ-bg@2x.png");
+  }
+
+  .pass__fail {
+    background-image: url("http://cgstatic.wjx.cn/images/confirm-failure-bg@2x.png");
+  }
+}
+
+.pass__status-img {
+  text-align: center;
+}
+
+.pass__box {
+  padding: 40rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+}
+
+.pass__details {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-bottom: 70rpx;
+}
+
+.details__obj {
+  flex: 1 1 auto;
+  height: 80rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+}
+
+.details__obj:nth-child(1) {
+  border-right: 2rpx solid #e6e6e6;
+}
+
+.details-word {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-self: center;
+  line-height: 1;
+}
+
+.word-num {
+  font-size: 36rpx;
+  color: #1ea0fa;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.word {
+  font-size: 22rpx;
+  color: #a7acc2;
+}
+
+.details-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  align-self: center;
+}
+
+.again-join-btn {
+  font-size: 32rpx;
+  color: #fff;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  background-color: #1ea0fa;
+  margin-top: 40rpx;
+}
+
+.pass-btn-box {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.pass-btn {
+  width: 48%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #8a8d99;
+  height: 86rpx;
+  line-height: 86rpx;
+  border: 2rpx solid #c5cadb;
+  border-radius: 16rpx;
+  margin-top: 30rpx;
+  background-color: #fff;
+  margin-right: 0 !important;
+}
+
+.red_tit {
+  position: absolute;
+  top: 45rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.red_tit-no {
+  position: absolute;
+  top: 75rpx;
+  font-size: 28rpx;
+  color: #ec412c;
+  text-align: center;
+}
+
+.amount-box {
+  font-size: 44rpx;
+  color: #ec412c;
+  font-weight: bold;
+}
+
+.amount-unit {
+  font-size: 30rpx;
+  color: #ec412c;
+  font-weight: bold;
+}
+
+.open-color-black {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.col_Lan {
+  color: #1ea0fa;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.redPic {
+  width: 538rpx;
+  height: 334rpx;
+}
+
+/* ----------------- */
+
+.pass_suc {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+image {
+  flex: 0 0 auto;
+}
+
+.sucPic {
+  width: 559rpx;
+  height: 168rpx;
+  margin-top: 35rpx;
+  margin-bottom: 28rpx;
+}
+
+.lookRankPic {
+  width: 280rpx;
+  height: 90rpx;
+  margin-top: 20rpx;
+}
+
+.share__btn {
+  width: 280rpx;
+  height: 90rpx;
+  line-height: 1;
+  padding: 0;
+  margin-top: 35rpx;
+  background-color: transparent;
+}
+
+.share__btn image {
+  width: 280rpx;
+  height: 90rpx;
+}
+
+button::after {
+  display: none;
+}
+
+.choundPic {
+  background: url("http://cgstatic.wjx.cn/images/cloud@2x.png");
+  background-size: cover;
+  width: 100%;
+  height: 185rpx;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+.choundPic text {
+  display: inline-block;
+  padding-top: 127rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.draw_red {
+  margin-top: 40rpx;
+}
+
+.draw_red_cont {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rankMes text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.rankMes .mr {
+  margin-right: 36rpx;
+}
+
+.smallRedPic {
+  margin-top: 20rpx;
+  width: 420rpx;
+  height: 336rpx;
+}
+
+/*  group-style Start  */
+
+.group-container {
+  position: relative;
+  border: 2rpx solid #1ea0fa;
+  border-radius: 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.group-title {
+  position: relative;
+  top: -24rpx;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 28rpx;
+  color: #1ea0fa;
+  height: 48rpx;
+  padding: 0 36rpx;
+  line-height: 48rpx;
+  border-radius: 24rpx;
+  background-color: #e0edff;
+  border: 2rpx solid #1ea0fa;
+  max-width:240px;
+  text-align: center;
+}
+
+.group-body {
+  border-radius: 16rpx;
+  background-color: transparent;
+}
+
+.everyone-rank {
+  padding: 0 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.rank_List {
+  font-size: 34rpx;
+  background: #fff;
+  height: 118rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.everyone-rank .rank_List:nth-of-type(-n+3) .viewull-right {
+  color: #ff941a;
+}
+
+.everyone-rank .curRank {
+  color: rgba(128, 128, 128, 1);
+}
+
+.everyone-rank .rank_List .curRank text {
+  display: inline-block;
+  width: 36rpx;
+  height: 44rpx;
+  text-align: center;
+}
+
+.everyone-rank .rank_List:nth-of-type(-n+3) .curRank text {
+  display: inline-block;
+  width: 36rpx;
+  height: 44rpx;
+  text-indent: -999em;
+  background-size: cover;
+}
+
+.everyone-rank .rank_List:nth-of-type(1) .curRank text {
+  background-image: url(http://cgstatic.wjx.cn/images/ranking__one@2x.png);
+}
+
+.everyone-rank .rank_List:nth-of-type(2) .curRank text {
+  background-image: url(http://cgstatic.wjx.cn/images/ranking__two@2x.png);
+}
+
+.everyone-rank .rank_List:nth-of-type(3) .curRank text {
+  background-image: url(http://cgstatic.wjx.cn/images/ranking__three@2x.png);
+}
+
+.score-rankingLis__inner {
+  flex: 1 1 auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-rankingList__score {
+  margin-left: 40rpx;
+  color: rgba(128, 128, 128, 1);
+}
+
+.viewull-left {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.viewull-right {
+  color: rgba(30, 160, 250, 1);
+  font-size: 34rpx;
+}
+
+.fs_smail {
+  font-size: 24rpx;
+}
+
+.myMess {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.viewull-left .nametext {
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+  max-width: 260rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.viewull-left image, .myPic {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 20rpx;
+}
+
+.viewull-left .ranktext {
+  font-size: 24rpx;
+  color: rgba(128, 128, 128, 1);
+}
+
+.time-icon {
+  position: relative;
+  top: 2rpx;
+  width: 22rpx !important;
+  height: 22rpx !important;
+  margin-right: 5rpx !important;
+  margin-left: 0 !important;
+}
+
+.timed {
+  font-size: 24rpx;
+}
+
+.group-more {
+  font-size: 24rpx;
+  color: #b3b3b3;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+}
+
+/*  group-style End  */

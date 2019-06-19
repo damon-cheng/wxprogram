@@ -1,0 +1,79 @@
+page {
+  background-color: #edf0f5;
+}
+
+.category__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff; 
+  border-radius: 16rpx;
+  margin: 20rpx;
+}
+
+.items {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33.33%;
+  font-size: 32rpx;
+  color: #5c5e66;
+  text-align: center;
+  height: 200rpx;
+}
+
+.items-icon {
+  width: 92rpx;
+  height: 92rpx;
+  margin: 0 auto;
+  background-size: 92rpx 92rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.comprehensive {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/comprehensive@1x.png");
+}
+.history {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/history@1x.png");
+}
+.geography {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/geographic@1x.png");
+}
+.literary {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/literature@1x.png");
+}
+.brain {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/mental@1x.png");
+}
+.television {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/television@1x.png");
+}
+.sports {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/sports@1x.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .comprehensive {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/comprehensive@2x.png");
+}
+.history {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/history@2x.png");
+}
+.geography {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/geographic@2x.png");
+}
+.literary {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/literature@2x.png");
+}
+.brain {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/mental@2x.png");
+}
+.television {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/television@2x.png");
+}
+.sports {
+  background-image: url("http://cgstatic.wjx.cn/images/bank/sports@2x.png");
+}
+
+}

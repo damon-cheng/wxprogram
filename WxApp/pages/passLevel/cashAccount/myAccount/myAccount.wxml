@@ -1,0 +1,49 @@
+<!--pages/passLevel/cashAccount/myAccount/myAccount.wxml-->
+<view class="account__wrap">
+  <view class="account__nav"></view>
+  <view class="account__panel">
+    <view class="account__avatars">
+      <image src="{{avatarUrl}}" class="avatars-icon"></image>
+      <view class="user__info">
+        <text>{{nickName}}</text>
+        <view class="text-icon-m" wx-if="{{gender===1}}"></view>
+        <view class="text-icon-f" wx:elif="{{gender===2}}"></view>
+      </view>
+    </view>
+    <view class="account__menu">
+      <view class="account__amount">
+        <view class="money-box"><text class="money-box-tit">余额：</text>￥{{balance}}</view>
+        <view class="balance-box">
+          <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='widhDraw-btn'>提现</button>
+          <view class="income-expenses-details" bindtap='incomeExpensesDetails'>收支明细</view>
+        </view>
+      </view>
+      <view class="account__service">
+        <button class="service-icon" open-type="contact"></button>
+        <text class="account-word">联系客服</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="record__content">
+    <text class="title">我参与过的闯关</text>
+    <view class="record-body">
+      <view class="record-items" id="{{index}}" wx:if="items.length > 0" wx:for="{{items}}" bindtap="jumpRankTrigger">
+        <view class="items-name">
+          <view class="cg-title">{{item.title? item.title:""}}</view>
+          <view class="cg-answer">答对{{item.rightNumber}}题</view>
+        </view>
+        <view class="items-time">
+          <view class="cg-time">{{item.costTime}}秒</view>
+          <view class="cg-date">{{item.createTime}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="record-empty" hidden='{{items.length != 0}}'>
+      <view class="empty-box">
+        <view class="null-icon"></view>
+        <view class="empty-word">暂无参与记录！</view>
+      </view>
+    </view>
+  </view>
+</view>

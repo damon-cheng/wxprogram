@@ -1,0 +1,266 @@
+/* pages/passLevel/editTitle/editTitle.wxss */
+
+page {
+  background-color: #eceef8;
+}
+
+.page__content {
+  position: relative;
+  overflow: hidden;
+}
+
+.mod__setting {
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  margin: 20rpx 0;
+}
+
+.mod__setting .mod__legend {
+  font-size: 36rpx;
+  color: #313233;
+  line-height: 104rpx;
+  padding: 0 40rpx;
+  border-bottom: 2rpx solid #c8cacc;
+}
+
+.mod__setting .mod__body {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  border-top: 2rpx solid #c8cacc;
+  border-bottom: 2rpx solid #c8cacc;
+}
+
+.mod__body picker {
+  position: relative;
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  align-self: center;
+}
+
+.mod__body picker view {
+  color: #bebebe;
+  font-size: 36rpx;
+}
+
+.fraction-wrap {
+  text-align:right;
+  padding-right:80rpx;
+  font-size: 100rpx;
+}
+
+.fraction-num {
+  position: absolute;
+  top: 0;
+  right: 40rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  margin-left: 3px;
+}
+
+
+
+.section__title {
+  position: absolute;
+  left: 40rpx;
+    color: #666;
+    font-size: 32rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    overflow: hidden;
+}
+
+.mod__title {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+
+.mod__legend {
+  align-self: center;
+  font-size: 36rpx;
+  color: #213233;
+  line-height: 36rpx;
+}
+.mod__input{
+  display: flex;
+  display: -webkit-flex;
+}
+.mod__input label textarea {
+  flex: 1 1 auto;
+  border: 1px solid #dcdee0;
+  padding: 20rpx 24rpx;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #333;
+  -webkit-appearance: none;
+}
+
+.mod__add-box {
+  background-color: #fff;
+}
+
+.default-box {
+  font-size: 28rpx;
+  color: #313233;
+  padding: 0 40rpx;
+  overflow: hidden;
+  border-bottom: 2rpx solid #c8cacc;
+}
+
+.default-box .item {
+  float: left;
+  line-height: 104rpx;
+  margin-right: 24rpx;
+}
+
+.option__list {
+  overflow: hidden;
+}
+
+.sel__items {
+  position: relative;
+}
+
+.sel__items .sel__items-box {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  align-items:center;
+  min-height: 108rpx;
+  padding: 0 40rpx 0 40rpx;
+}
+
+.sel__items .sel__items-box::before {
+  content: "";
+  position: absolute;
+  left: 112rpx;
+  bottom: 0;
+  width: calc(100% + 8rpx);
+  height: 2rpx;
+  background-color: #dcdee0;
+}
+
+.sel__items .sel__items-input, .sel__items .sel__items-check {
+  align-self: center;
+  flex-shrink: 0;
+  width: 60rpx;
+}
+
+.sel__items .sel__items-input {
+  flex: 1 1 auto;
+  margin: 0;
+  padding:10px;
+  border: 0;
+}
+
+.sel__items .sel__items-input textarea {
+  font-size: 34rpx;
+  width: 100%;
+}
+
+.del-btn {
+  flex-shrink: 0;
+  background: url("http://cgstatic.wjx.cn/images/del@2x.png");
+  background-size: cover;
+  right: 30rpx;
+  width: 56rpx;
+  height: 56rpx;
+}
+
+/*  重写 checkbox 样式 Start  */
+radio .wx-radio-input {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.sel__items-check radio .wx-radio-input.wx-radio-input-checked {
+  border-color: transparent;
+  background: #1ea0fa;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+
+/*  重写 checkbox 样式 End  */
+
+.add__question {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  height: 108rpx;
+  font-size: 32rpx;
+  color: #1ea0fa;
+  line-height: 108rpx;
+  margin: 0;
+  padding: 0;
+  background-color: #fafbff;
+  border-top: 2rpx solid #dcdee0;
+  margin-top: -2rpx;
+}
+
+.add__question .add__icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 4px;
+  align-self: center;
+  background-image: url("http://cgstatic.wjx.cn/images/add-blue@1x.png");
+  background-repeat: no-repeat;
+  background-size: 24rpx 24rpx;
+  background-position: center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .add__question .add__icon {
+    background-image: url("http://cgstatic.wjx.cn/images/add-blue@2x.png");
+  }
+}
+
+.btn__wrap {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+  padding: 0 40rpx;
+}
+
+.btn__wrap button {
+  margin: 0;
+  width: 45%;
+}
+
+.btn__wrap button:nth-child(1) {
+  background-color: #1ea0fa;
+}
+
+.btn__wrap button:nth-child(2) {
+  margin-left: 20rpx;
+}
+
+
+.note__voice-title {
+  position: absolute;
+  top: 15rpx;
+  right: 40rpx;
+}

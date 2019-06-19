@@ -1,0 +1,26 @@
+<import src="../../lib/wetoast/wetoast.wxml" />
+
+<view class="transfer-box">
+  <view class="transfer-nav"></view>
+  <view class="transfer-wrap">
+    <text class="transfer-title">复制闯关至闯关之星</text>
+    <view class="transfer-detail">您正在将问卷星中的闯关复制到闯关之星中， 复制后只会同步闯关题目，两边数据依然是 相互独立的。</view>
+    <view class="transfer-tit">
+        <view><text>闯关标题：</text>{{title}}</view>
+        <view><text>题目数量：</text>{{qcount}}题</view>
+    </view>
+    <view wx:if="{{isExpired}}" class="isexpired-word">链接已过期</view>
+    <block wx:if="{{!isExpired}}">
+      <view class="submit-btn" bindtap='synchroToWxEvent'>确认复制</view>
+      <view class="cancel-btn" bindtap='cancelEvent'>取消复制</view>
+    </block>
+  </view>
+</view>
+
+<view class='new_pass' wx:if="{{isExpired}}">
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+    <text>回到我的闯关</text>
+  </navigator>
+</view>
+
+<template is="wetoast" data="{{...__wetoast__}}" />

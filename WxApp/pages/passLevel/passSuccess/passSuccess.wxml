@@ -1,0 +1,120 @@
+<view class="pass__wrap">
+  <view class="pass__nav pass__success"></view>
+  <view class="pass__status-img">
+    <image class='sucPic' src="/images/confirm-succeed@2x.png"></image>
+  </view>
+  <view class="pass__box">
+    <view class="pass__details">
+      <view class="details__obj">
+        <image class="details-icon" src="/images/big-ranking@3x.png"></image>
+        <view class="details-word">
+          <text class="word-num">{{rank}}</text>
+          <text class="word">闯关排行</text>
+        </view>
+      </view>
+      <view class="details__obj">
+        <image class="details-icon" src="/images/big-time@3x.png"></image>
+        <view class="details-word">
+          <text class="word-num">{{costTime}}s</text>
+          <text class="word">闯关时间</text>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="group-container" wx:if="{{groupGId || openGId}}">
+      <view class="group-title">
+           <open-data type="groupName" open-gid="{{openGId}}"></open-data>   
+      </view>
+      <view class="group-body">
+        <view class='everyone-rank' wx:if="{{items.length>0}}">
+          <block wx:for="{{items}}">
+            <view class="rank_List">
+              <view class='curRank'>
+                <text>{{item.rank}}</text>
+              </view>
+              <view class="score-rankingLis__inner">
+                <view class="viewull-left">
+                  <image src='{{item.avatarUrl}}'></image>
+                  <view class='myMess'>
+                    <text class="nametext">{{item.nickName}}</text>
+                    <view class='ranktext'>
+                      <image class="time-icon" src='/images/small-time@2x.png'></image>
+                      <text class='timed'> {{item.costTime}}s</text>
+                    </view>
+                  </view>
+                </view>
+                <view class="viewull-right  score-rankingList__score">
+                  <text class='fs_smail'>答对{{item.score}}题</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="group-more" bindtap='groupMoreEvent'>{{groupMoreWord}}</view>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="pass-btn-box">
+      <navigator class="pass-btn" url="/pages/passLevel/rank/rank?shortUrl={{shortUrl}}&groupGId={{groupGId}}" hover-class='none'>
+        <view>查看排行榜</view>
+      </navigator>
+      <button class="pass-btn" open-type="share">邀请好友参与</button>
+    </view>
+    <view class='draw_red' wx:if="{{redShow}}">
+      <view class='draw_red_cont'>
+        <text wx:if="{{style1}}" class='red_tit'>恭喜您，获得一次抽取红包的机会!</text>
+        <text wx:if="{{!style1&&style2}}" class='red_tit-no'>非常抱歉，什么也没抽中!</text>
+        <view wx:if="{{!style1&&!style2}}" class='red_tit'>
+          <view class="amount-box">
+            <text class="amount-unit">恭喜您抽到</text>{{amount}}
+            <text class="amount-unit">元红包</text>
+          </view>
+          <view class="amount-unit">将在十分钟左右发放</view>
+        </view>
+        <view bindtap='redWrapBtn'>
+          <image wx:if="{{style1}}" class='redPic' src="/images/redenvelope-nor@2x.png"></image>
+          <image wx:if="{{!style1&&style2}}" class='redPic' src="/images/red-unfold@2x.png"></image>
+          <image wx:if="{{!style1&&!style2}}" class='redPic' src="/images/red-unfold@2x.png"></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+<!-- <view class='pass_suc'>
+
+  <view class='rankMes'>
+    <text class='mr'>排行：{{rank}}</text>
+    <text>用时：{{costTime}}s</text>
+  </view>
+
+  <button class="share__btn" open-type="share">
+    <image src="/images/invite-friends@2x.png"></image>
+  </button>
+
+  <view class='draw_red' wx:if="{{redShow}}">
+    <view class='draw_red_cont'>
+      <text wx:if="{{style1}}" class='red_tit'>恭喜您，获得一次抽取红包的机会!</text>
+      <text wx:if="{{!style1&&style2}}" class='red_tit'>很抱歉！什么也没抽到!</text>
+      <view wx:if="{{!style1&&!style2}}" class='red_tit'>恭喜您抽到{{amount}}元红包，将在十分钟左右发放</view>
+      <view bindtap='redWrapBtn'>
+        <image wx:if="{{style1}}" class='redPic' src="/images/redenvelope-nor@2x.png"></image>
+        <image wx:if="{{!style1&&style2}}" class='smallRedPic' src="/images/redenvelope-pre@2x.png"></image>
+        <image wx:if="{{!style1&&!style2}}" class='smallRedPic' src="/images/redenvelope-ed.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view> -->
+
+<view class='height'></view>
+<view class='new_pass'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+    <text>我也要发起闯关</text>
+  </navigator>
+</view>

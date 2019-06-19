@@ -1,0 +1,136 @@
+/* pages/passLevel/editQueName/editQueName.wxss */
+
+page {
+  background-color: #eceef8;
+}
+
+.page__content {
+  position: relative;
+  padding: 0 20rpx;
+}
+
+/* .mod__fieldset {
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.mod__legend {
+  font-size: 36rpx;
+  color: #213233;
+  line-height: 36rpx;
+  margin: 40rpx 40rpx 30rpx;
+}
+
+.mod__input {
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 40rpx 40rpx;
+}
+
+.mod__input input, .mod__input textarea {
+  flex: 1 1 auto;
+  border: 2rpx solid #dcdee0;
+  padding: 30rpx 20rpx;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #333;
+  -webkit-appearance: none;
+}
+
+.btn__wrap {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+  padding: 0 40rpx;
+}
+
+.btn__wrap button {
+  margin: 0;
+  width: 45%;
+}
+
+.btn__wrap button:nth-child(1) {
+  margin-right: 20rpx;
+}
+
+.btn__wrap button:nth-child(1) {
+  background-color: #1ea0fa;
+}
+
+
+.caveat {
+  color: red;
+  font-size: 32rpx;
+  padding: 20rpx 40rpx;
+} */
+
+
+.area__body {
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-shadow: 0 0 15rpx rgba(184, 197, 204, 0.1);
+}
+
+.area__items {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0 40rpx;
+  overflow: hidden;
+}
+
+.area__items::after {
+  content: "";
+  position: absolute;
+  left: 40rpx;
+  bottom: 0;
+  width: calc(100% + 40rpx);
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.area__items:last-child::after {
+  height: 0;
+}
+
+.area__items-textarea {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  padding: 0 40rpx;
+  overflow: hidden;
+}
+
+.area__input {
+  font-size: 32rpx;
+  color: #313233;
+  align-self: center;
+  text-align: left;
+  flex: 1 1 auto;
+  margin-right: 30rpx;
+}
+
+.area__textarea {
+  font-size: 32rpx;
+  color: #313233;
+  line-height: 48rpx;
+  text-align: left;
+  height: 320rpx;
+  flex: 1 1 auto;
+  margin-top: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.submit-btn {
+  margin-top: 32rpx;
+  border-radius: 16rpx;
+  background-color: #1ea0fa !important;
+  box-shadow: 0 8rpx 24rpx rgba(30, 123, 250, 0.3);
+}

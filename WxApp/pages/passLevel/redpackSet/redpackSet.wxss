@@ -1,0 +1,98 @@
+page{
+  height: 100%;
+  line-height: normal;
+  background-color: #f4f4f4;
+}
+.red_list{
+  font-size: 28rpx;
+  padding-top: 20rpx;
+}
+.red_surplus_btn{
+ display: inline-block;
+ text-align: center;
+ border-radius: 52rpx;
+  width: 190rpx;
+  height:52rpx;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  border:1px solid #d6d6db;
+}
+.returnMoney{
+  width: 120rpx;
+  margin-right: 15rpx;
+}
+.must{
+  font-size: 36rpx;
+  color: #1ea0fa;
+}
+.flexRight{
+  display: flex;
+}
+.item{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding-left: 40rpx;
+}
+.order_num{
+  height: 88rpx;
+  border-bottom: 1px solid #d6d6db;
+  color: #666666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col_666{
+  color: #666;
+}
+.mr27{
+  margin-right: 27rpx;
+}
+.surplus{
+  color: #000;
+  font-weight: bold;
+}
+.returnMoneyed{
+  font-size: 24rpx;
+  margin-right: 40rpx;
+  color: #ff0000;
+}
+.fsBig{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.add_red_btn{
+  width: 500rpx;
+	height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  background: #1ea0fa;
+}
+.add_red{
+  margin-top: 80rpx;
+  padding-bottom: 80rpx;
+}
+.add_red_btn_hover{
+  -webkit-filter: grayscale(0.2);
+}
+.order_mes{
+  padding-top: 24rpx;
+}
+.mes_detail{
+  margin-bottom: 30rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding-right:40rpx;
+}
+.mes_detail .left{
+  font-weight: bold;
+}
+.red_surplus{
+  height: 88rpx;
+  border-top: 1px solid #d6d6db;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 40rpx;
+}

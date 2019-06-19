@@ -1,0 +1,27 @@
+ <view class="details-body" wx:if="items.length > 0">
+   <view class="details-items"  wx:for="{{items}}">
+    <view class="items-name">
+      <view class="tx-title">{{item.title}}{{item.type !=6 ? '(' + item.attach + ')' : ""}}</view>
+      <view class="tx-account" style="{{item.amountStyle}}">{{item.amount > 0? "+" + item.amount : item.amount}}</view>
+    </view>
+    <view class="items-time">
+      <view class="tx-status" style="{{item.failStyle}}">{{item.message}}</view>
+      <view class="tx-date">{{item.createTime}}</view>
+    </view>
+  </view>  
+</view> 
+
+<view class="details-empty-body" hidden='{{items.length != 0}}'>
+  <view class="details-empty" >
+    <view class="empty-box">
+      <view class="null-icon"></view>
+      <view class="empty-word">暂无收支记录!</view>
+    </view>
+  </view>
+</view>
+
+<view class='new_pass'>
+  <navigator url='../myAccount/myAccount' open-type='switchTab'>
+    <text>回到我的账户</text>
+  </navigator>
+</view>

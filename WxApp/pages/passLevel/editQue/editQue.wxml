@@ -1,0 +1,98 @@
+<!--pages/passLevel/editQue/editQue.wxml-->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view class="edit__content">
+  <view class="edit__list-box">
+    <view class="edit__list-wrap">
+      <view class="edit__list-body" bindtap='editTitleClick'>
+        <text class="edit__desc">{{title}}</text>
+        <text class="edit__desc-tit">{{description}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="edit__list-box" wx:if="{{!isrefId}}">
+    <view class="edit__list-wrap" wx:for="{{questions}}" wx:for-item="item" wx:for-index="index">
+      <!-- <span class="iconfont iconfont-remove" style="width:30px" bindtap="deleteAnswer" data-id="{{item.topic}}"></span> -->
+      <view class="edit__list-body" data-topic="{{item.topic}}" bindtap="bindShowTool">
+        <text class="edit__desc"><text>{{index + 1}}.</text>{{item.title}}</text>
+        <view class="edit__each">
+          <view class="ui-control-group">
+            <view class="ui-label ui-radio {{items.itemRadio ?'ui-default':''}}" wx:for="{{item.items}}" wx:for-item="items">
+              {{items.itemTitle}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="edit__menu {{item.topic === currentId?'show':'hide'}}">
+        <view class="edit__tool">
+          <view class="icon icon-editbg" data-topic="{{item.topic}}" bindtap='editEleClick'></view>
+          <view class="icon icon-upbg" data-topic="{{item.topic}}" bindtap='editUpClick'></view>
+          <view class="icon icon-downbg" data-topic="{{item.topic}}" bindtap='editDownClick'></view>
+          <view class="icon icon-delbg" data-topic="{{item.topic}}" bindtap='deleteQuesiton'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="edit__list-box" wx-if="{{false}}">
+    <view class="edit__list-wrap">
+      <view class="edit__list-body" bindtap='editConclusion'>
+        <text class="edit__desc">闯关结束语</text>
+        <text class="edit__desc-tit">{{conclusion}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view wx:if="{{!isrefId}}" class="edit__add-box" bindtap='bindAddAnswer'>
+    <view class="edit__add-wrap addq">
+      <view class="icon"></view>
+      <view>添加新题</view>
+    </view>
+  </view> -->
+
+  <view wx:if="{{!isrefId}}" class="edit__add-box ">
+    <view class="edit-items edit-add-topic" bindtap='bindAddAnswer'>
+      <view class="topic-icon"></view>
+      <text class="edit-word">添加新题</text>
+    </view>
+    <view class="edit-items edit-add-bankTopic" bindtap='addBankTopic'>
+      <view class="bankTopic-icon"></view>
+      <text class="edit-word">题库选题</text>
+    </view>
+    <view class="edit-items edit-add-ocr" bindtap='addPicInBulk'>
+      <view class="ocr-icon"></view>
+      <text class="edit-word">扫描图片添题</text>
+    </view>
+  </view>
+
+  <view class="btn-wrap">
+    <!-- <button class="submit-btn" type="primary" bindtap='previewQuestionPaper'>预览</button> -->
+    <button class="submit-btn" type="primary" bindtap='bindSetting'>完成编辑</button>
+  </view>
+
+
+</view>
+
+
+<!-- <view class="edit-bar-box">
+  <view class="edit-bar-items" bindtap='bindSetting'>
+    <view class="icon icon-set"></view>
+    <text class="edit-word">设置</text>
+  </view>
+  <view class="edit-bar-items" bindtap='goIndex'>
+    <view class="icon icon-add"></view>
+    <text class="edit-word">我的闯关</text>
+  </view>
+  <view class="edit-bar-items" bindtap='previewQuestionPaper'>
+    <view class="icon icon-preview"></view>
+    <text class="edit-word">预览</text>
+  </view>
+</view> -->
+
+
+
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

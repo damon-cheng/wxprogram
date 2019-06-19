@@ -1,0 +1,45 @@
+<view class="page__body">
+  <view class="pass__answer-box">
+    <view class="pass__content">
+      <view class="checkInMode__head divCheckInMode">
+        <view class="wjxCountDown__wrap game_time">
+          <view class="countDown__hold">
+            <view class="round round1" style="{{round1Style}}"></view>
+          </view>
+          <view class="countDown__hold">
+            <view class="round round2" style="{{round2Style}}"></view>
+          </view>
+          <view class="countDown__bg"></view>
+          <view class="CountDown__frame"></view>
+          <view class="countDown__time">
+            <view class="countDown__time--num">{{maxCgTime}}</view>
+            <view class="countDown__time--unit">秒</view>
+          </view>
+        </view>
+        <view class="icon decoration-icon"></view>
+        <view class="schedule-wrap">
+          <view class="schedule">{{ curTotal }}</view>
+          <view>/</view>
+          <view class="cgtotal">{{ isExtractQuestionRandom && extractQuestionNumber!=0 ? extractQuestionNumber : questions.length }}</view>
+          <view>题</view>
+        </view>
+      </view>
+      <view class="pass__question">
+        <view class="fieldset {{index + 1 == currentID ? 'show':'hide'}}" data-index="{{index + 1}}" data-id="{{item.topic}}" wx:for="{{questions}}" wx:for-item="item" wx:for-index="index">
+          <view class="field-label">{{index + 1}}.
+            <text>{{item.title}}</text>
+          </view>
+          <view class="ui-controlgroup">
+            <label wx:for="{{item.items}}" data-indexTwo="{{indexTwo}}" data-index="{{index + 1}}" data-curClick="{{curClick}}"  data-rsaValue="{{items.rsaValue}}" data-itemRadio="{{items.itemRadio}}" data-topic="{{item.topic}}" data-id="{{items.chooseObj}}" data-id="{{items.id}}" wx:for-item="items"
+              wx:for-index="indexTwo" class="ui-radio" bindtap='answerClick'>
+              <icon wx-if="{{items.chooseObj}}" type="success" color="#1ea0fa" />
+              <icon wx:else type="circle" />
+              <text class="ui-word">{{items.itemTitle}}</text>
+            </label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="pass__foot"></view>
+  </view>
+</view>

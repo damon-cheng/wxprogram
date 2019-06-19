@@ -1,0 +1,55 @@
+<view class='red_list' wx:if="{{showPage}}">
+
+  <block wx:for="{{items}}">
+    <view class='item'>
+      <view class='order_num'>
+        <text>订单号码：{{item.orderNumber}}</text>
+        <view class='returnMoneyed' wx:if="{{item.status==3}}">已退<text class='fsBig'>￥{{(item.amountMoney * 100 -item.hasExtractedMoney * 100) / 100}}</text></view>
+      </view>
+      <view class='order_mes'>
+        <view class='mes_detail'>
+          <text class='left'>红包总金额： </text>
+          <text class='right'>￥{{item.amountMoney}}元</text>
+        </view>
+        <view class='mes_detail'>
+          <text class='left'>红包总个数： </text>
+          <text class='right'>{{item.quantity}}个</text>
+        </view>
+        <view class='mes_detail'>
+          <text class='left'>中奖概率：</text>
+          <text class='right'>{{item.extractionRate*100+'%'}}</text>
+        </view>
+      </view>
+      <view class='red_surplus'>
+        <view class='col_666' wx:if="{{item.status!=3}}">剩余:
+          <text class='must'>{{item.quantity-item.hasExtractedNumber}}</text>/{{item.quantity}}
+        </view>
+        <view class='col_666' wx:if="{{item.status==3}}">
+          <text>已发:</text>
+          <text class='surplus mr27'>{{item.hasExtractedNumber}}个</text>
+          <text>共计：</text>
+          <text class='surplus'>￥{{item.hasExtractedMoney}}</text>
+        </view>
+        <view class='flexRight'>
+          <text wx:if="{{item.status!=3&&item.quantity-item.hasExtractedNumber!=0&&openStatus!=1}}" class='red_surplus_btn returnMoney' data-ordernum="{{item.orderNumber}}" bindtap='returnMoney'>退款</text>
+          <navigator hover-class="none" url='/pages/passLevel/redpackState/redpackState?activityId={{item.activityId}}&status=1'>
+            <text class='red_surplus_btn'>红包领取情况</text>
+          </navigator>
+        </view>
+
+      </view>
+    </view>
+  </block>
+  <view class='add_red'>
+    <button bindtap='addRed' class='add_red_btn' hover-class='add_red_btn_hover'>追加红包</button>
+  </view>
+
+</view>
+
+<view class='height'></view>
+<view class='new_pass'>
+  <navigator hover-class='none' url="/pages/passLevel/index" open-type="switchTab">
+  <image src="{{url+'/add@2x.png'}}"></image>
+    <text>回到我的闯关</text>
+  </navigator>
+</view>

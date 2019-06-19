@@ -1,0 +1,90 @@
+<view class="share__wrap">
+  <view class="share__nav"></view>
+
+  <view class="share__panel">
+    <view class="share__tit">{{title}}</view>
+    <view class="share-btn-box">
+      <view class="share-btn" bindtap='previewModeTrigger'>预览模式</view>
+      <view class="share-btn" bindtap='answerModeTrigger'>答题模式</view>
+    </view>
+  </view>
+
+  <view class="share__content">
+    <view class="title">分享</view>
+    <button class="share__items" open-type="share">
+      <view class="icon forward-icon"></view>
+      <view class="share-word">转发</view>
+      <view class="arrow-icon"></view>
+    </button>
+    <view class="share__items" bindtap='shareImgTrigger'>
+      <view class="icon shareImg-icon"></view>
+      <text class="share-word">生成分享图片</text>
+      <view class="arrow-icon"></view>
+    </view>
+    <button class="share__items" bindtap='embeddedPublicNum'>
+      <view class="icon public-icon"></view>
+      <view class="share-word">嵌入公众号文章</view>
+      <view class="arrow-icon"></view>
+    </button>
+    <button class="share__items" bindtap='joinExperienceZone'>
+      <view class="icon zone-icon"></view>
+      <view class="share-word">申请加入闯关广场</view>
+      <view class="arrow-icon"></view>
+    </button>
+  </view>
+
+  <view class='new_pass'>
+    <navigator hover-class='none' url="/pages/passLevel/index" open-type='switchTab'>
+      <text>回到我的闯关</text>
+    </navigator>
+  </view>
+</view>
+
+
+<view class="modal" hidden="{{modalFlag}}">
+  <view class="modal-body" hidden='{{isShare}}'>
+    <view class="modal-close" bindtap='modalFlagClose'></view>
+    <view class="qcode-box">
+      <image src="{{qcodeUrl}}" class="qcode"></image>
+    </view>
+    <view class="download-btn" bindtap='saveImgToPhotosAlbumTap'>保存图片到手机</view>
+  </view><!--分享图片-->
+
+  <view class="modal-join" hidden='{{isJoin}}'>
+    <view class="modal-close join-close" bindtap='modalFlagClose'></view>
+    <text class="join-tit">将闯关嵌入到公众号文章，需要两步</text>
+    <view class="join-wrap">
+      <view class="join-content">
+        <text class="join-content-tit">第一步</text>
+        <text class="join-main">在您的公众号中关联闯关星小程序。</text>
+        <text class="join-main">闯关星的AppID：{{appId}}</text>
+        <text class="color-gray">申请后，需我们同意</text>
+      </view>
+      <view class="join-content">
+        <text class="join-content-tit">第二步</text>
+        <text class="join-main">在公众号中插入本次闯关的页面路径。</text>
+        <text class="join-main">{{cgPath}}</text>
+      </view>
+    </view>
+    <text class="prompt-box">复制以上信息至电脑端操作</text>
+    <button type="primary" class="copy-btn" bindtap='copyTBL'>复制</button>
+  </view><!--公众号-->
+
+  <view class="modal-info" hidden='{{isInfo}}'>
+    <view class="modal-close join-close" bindtap='modalFlagClose'></view>
+    <text class="join-tit">申请须知</text>
+    <view class="info-wrap">
+      <view class="join-content">
+        <view class="info-word"><view>1、</view><view class="info">申请加入闯关广场，需保证闯关中有红包余额。</view></view>
+        <view class="info-word"><view>2、</view><view>红包发放完毕后，闯关将自动退出闯关广场。</view></view>
+        <view class="info-word"><view>3、</view><view>闯关广场的排序，以加入时间先后为准。</view></view>
+        <view class="info-word"><view>4、</view><view>加入闯关广场，将会有陌生用户领取红包，请知悉。</view></view>
+        <view class="info-word"><view>5、</view><view>加入闯关广场，需经闯关星审核，审核通过后，会自动加入，并通知到您个人微信。</view></view>
+      </view>
+    </view>
+
+    <form bindsubmit="formApplyEvent" report-submit="true">
+      <button formType="submit" type="primary" class="apply-btn">确认申请</button>
+    </form>
+  </view><!--体验区公告-->
+</view>

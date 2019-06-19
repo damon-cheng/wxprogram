@@ -1,0 +1,73 @@
+<!--pages/passLevel/editTitle/editTitle.wxml-->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+<view class="page__content">
+  <view class="mod__title">
+    <view class="mod__input">
+      <textarea name="title" value="{{title}}" placeholder="编辑标题名称" type="text" bindblur="changeChoiceqQuestionTitle" auto-height/>
+      <view class="note__voice note__voice-title" data-name="title" bindtouchstart='touchdown' bindtouchend='touchup'>
+        <image class="voice-img" src="/images/voice-item.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="mod__add-box">
+    <view class="default-box">
+      <view class="item">答案</view>
+      <view class="item">选项</view>
+    </view>
+    <view class="option__list">
+      <radio-group class="radio-group" bindchange="swiperChange">
+        <view class="sel__items" data-index="{{index}}" wx:for="{{items}}" wx:for-item="item">
+          <view class="sel__items-box" style="{{item.txtStyle}}" data-index="{{index}}">
+            <label class="checkbox sel__items-check" data-index="{{index}}">
+              <radio value="{{index}}" checked="{{item.itemRadio}}" />
+            </label>
+
+            <view class="sel__items-input">
+              <label>
+                <textarea show-confirm-bar="false" value="{{item.itemTitle}}" data-index="{{index}}" placeholder="选项{{index + 1}}" bindblur="changeChoiceqQuestionItemTitle" bindinput='setcont' auto-height/>
+              </label>
+            </view>
+            <view class="note__voice" data-index="{{index}}" bindtouchstart='touchdown' bindtouchend='touchup'>
+              <image class="voice-img" src="/images/voice-item.png"></image>
+            </view>
+            <image wx-if="{{items.length > 2}}" class="del-btn" data-index="{{index}}" bindtap='removeChoiceqQuestionAnswer' src="/images/del@2x.png"></image>
+          </view>
+        </view>
+      </radio-group>
+    </view>
+    <view class="add__question" bindtap="addChoiceqQuestionAnswer">
+      <view class="add__icon"></view>添加选项
+    </view>
+  </view>
+
+  <view class="mod__setting" hidden="{{true}}">
+    <view class="mod__legend">设置</view>
+    <view class="mod__body">
+      <view class="section__title">题目分数</view>
+      <picker bindchange="bindPickerChange" value="{{fractionIndex}}" range="{{fraction}}">
+        <view class="fraction-wrap">
+          {{fraction[fractionIndex]}}
+        </view>
+        <view class="fraction-num">分</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="btn__wrap">
+    <button type="primary" bindtap='formSubmit'>确定</button>
+    <button type="default" bindtap='cancelClick'>取消</button>
+  </view>
+</view>
+
+
+<view wx:if="{{isSpeaking}}" class="speak-style">
+  <image class="sound-style" src="/images/voice_icon_speech_sound_1.png"></image>
+  <image wx:if="{{j==2}}" class="sound-style" src="/images/voice_icon_speech_sound_2.png"></image>
+  <image wx:if="{{j==3}}" class="sound-style" src="/images/voice_icon_speech_sound_3.png"></image>
+  <image wx:if="{{j==4}}" class="sound-style" src="/images/voice_icon_speech_sound_4.png"></image>
+  <image wx:if="{{j==5}}" class="sound-style" src="/images/voice_icon_speech_sound_5.png"></image>
+</view>
+
+
+<template is="wetoast" data="{{...__wetoast__}}" />

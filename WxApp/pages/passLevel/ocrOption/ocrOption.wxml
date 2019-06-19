@@ -1,0 +1,73 @@
+<view hidden='{{!isPreview || !isStartOcr}}' class="ocr-wrap">
+  <view class="area-tit">
+    <textarea maxlength='123456789' class="area-tit-textarea" placeholder='提取文本区域' value="{{contenttxt_format}}" bindinput="contenttxtTrigger"></textarea>
+  </view>
+</view>
+
+<view hidden='{{isPreview || !isStartOcr}}' class="display-area">
+  <view class="display-tit">识别结果展示区</view>
+  <view class="edit__list-wrap" wx:for="{{questions}}" wx:for-item="item" wx:for-index="index">
+    <view class="edit__list-body" data-topic="{{item.topic}}">
+      <text class="edit__desc">{{item.title}}</text>
+      <view class="edit__each">
+        <view class="ui-control-group">
+          <view class="ui-label ui-radio {{items.itemRadio ?'ui-default':''}}" wx:for="{{item.items}}" wx:for-item="items">
+            {{items.itemTitle}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="area-btn" hidden='{{!isStartOcr}}'>
+  <view class="area-btn-lf">
+    <button bindtap='chooseImageTrigger'>{{isPreview ? '重新拍照' : '返回编辑'}}</button>
+    <image hidden='{{isPreview}}' class="instru-icon" src="/images/instructions.png" bindtap='promptTrigger'></image>
+  </view>
+  <view class="area-btn-rf">
+    <button bindtap='addQueTrigger'>{{isPreview ? '确定预览' : '确定保存'}}</button>
+  </view>
+</view>
+
+<view hidden='{{isStartOcr}}' class="empty-body" bindtap='chooseImageTrigger'>
+  <view class="empty-box">
+    <view class="null-icon"></view>
+    <view class="empty-word">将题目拍下来上传</view>
+    <view class="empty-sub">系统将自动识别获取题目</view>
+  </view>
+</view>
+
+
+<view class="modal" hidden="{{modalFlag}}">
+  <view class="modal-body">
+    <image class="modal-close" src="/images/close.png" bindtap='modalFlagClose'></image>
+    <text class="modal-content">
+        识别文本修改建议：<br/>
+1、题目题干中间不得有换行<br/>
+2、选项之间最好进行换行<br/>
+3、题目之间最好进行换行<br/>
+4、选项最好以A B C D进行标号<br/>
+
+推荐题目文本格式如下：<br/>
+1、我国的火警报警电话是（C）？<br/>
+A、110<br/>
+B、120<br/>
+C、119<br/>
+D、911<br/>
+
+1、我国的火警报警电话是（ ）？<br/>
+A、110<br/>
+B、120<br/>
+C、119（正确答案）<br/>
+D、911<br/>
+
+1、我国的火警报警电话是（ ）？
+A、110<br/>
+B、120<br/>
+C、119<br/>
+D、911<br/>
+答案：C
+    </text>
+  </view>
+</view>

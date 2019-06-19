@@ -1,0 +1,84 @@
+page {
+  background-color: #edf0f5;
+}
+
+.transfer-box {
+  padding: 0 40rpx;
+}
+
+.transfer-nav {
+  position: absolute;
+  top: -2rpx;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 330rpx;
+  background-size: cover;
+  background-image: url("http://cgstatic.wjx.cn/images/transfer-banner@1x.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .transfer-nav {
+    background-image: url("http://cgstatic.wjx.cn/images/transfer-banner@2x.png");
+  }
+}
+
+.transfer-wrap {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  margin-top: 240rpx;
+  padding: 40rpx 28rpx 68rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.transfer-title {
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.transfer-detail {
+  font-size: 32rpx;
+  color: #88898a;
+  margin-top: 10rpx;
+}
+
+.transfer-tit {
+  font-size: 32rpx;
+  color: #88898a;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+
+.submit-btn {
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 48rpx;
+  border-radius: 16rpx;
+  background-color: #1ea0fa;
+}
+
+.cancel-btn {
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #4d4d4d;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  border: 2rpx solid #d6d6d6;
+}
+
+.isexpired-word {
+  margin-top: 40rpx;
+  font-size: 26rpx;
+  color: red;
+}

@@ -1,0 +1,64 @@
+<!-- wetoast -->
+<import src="../../../lib/wetoast/wetoast.wxml" />
+
+<view class="search-section">
+  <view class="search-pancel-form" hidden='{{isEnter}}'>
+    <view class="search-bar-box">
+      <image class="search-icon" src='/images/search@3x.png'></image>
+      <input placeholder-style="color:#c8c9cc" type="text" class="search-bar-input" placeholder="输入关键词搜索" value="{{searchData}}" bindconfirm="searchSubmitEvent" bindfocus="serchFocusEvent" bindinput="searchInputEvent" bindblur="searchBlurEvent" />
+      <view class="search-clear" hidden='{{!searchData}}' bindtap='searchClearEvent'>
+        <icon type="clear" size="20"></icon>
+      </view>
+    </view>
+    <view class="search-submit" bindtap='searchSubmitEvent'>确定</view>
+  </view>
+  <view class="search-pancel-cut" hidden='{{!(selectArray.length > 0) && !isEnter}}'></view>
+  <view class="search-pancel-content" hidden='{{!(selectArray.length > 0)}}'>
+    <view class="search-pancel-items {{item.fixed ? 'pancel-fixed' : ''}}" hidden="{{item.selected}}" data-id="{{item.activityId}}" data-index="{{index}}" bindtap='enterEvent' wx:for="{{selectArray}}">
+      <view class="search-items-title">
+          <text>{{item.content[1]}}</text>
+          <text style='color: #1ea0fa'>{{item.content[0]}}</text>
+          <text>{{item.content[2]}}</text>
+      </view>
+      <view class="search-items-details">
+        <!-- <text class="search-total">{{selectArray.length}}题</text> -->
+        <view class="arrow-icon-box">
+          <image hidden='{{isEnter}}' src="/images/more_unfold.png" class="arrow-icon"></image>
+          <image hidden='{{!isEnter}}' src="/images/less.png" class="arrow-icon"></image>
+        </view>
+      </view>
+    </view>
+    <view class="search-pancel-wrap {{isIphoneX ? 'isIphoneXWrap':''}}" hidden='{{!isEnter}}'>
+      <view class="search-pancel-topic" wx:for="{{selectTopicArray}}" wx:for-item="topic" wx:for-index="i">
+        <view class="topic-title">{{i + 1}}、{{topic.title}}</view>
+        <checkbox-group data-index="{{i}}" data-topic="{{topic.topic}}" data-checked="{{topic.isChoose}}" bindchange="chooseTopicEvent">
+          <label class="search-checkbox">
+            <checkbox value="" checked="{{topic.isChoose}}"/>
+          </label>
+        </checkbox-group>
+        <view class="topic-body">
+          <text class="topic-body-items" wx:for="{{topic.items}}" wx:for-item="obj" wx:for-index="j">{{letterArray[j]}}、{{obj.itemTitle}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="search-pancel-footer" hidden='{{isEnter}}'>已显示全部</view>
+  </view>
+</view>
+
+
+<view class="search-fixed-box {{isIphoneX ? 'isIphoneXStyle':''}}" hidden='{{!isEnter}}'>
+  <view class="finish-progress">
+    <view class="selected-box {{isIphoneX ? 'selectedX-box':''}}">
+      <text class="current-topic">{{selectedChosenArray.length}}</text>
+      <text>已选题数</text>
+    </view>
+    <view class="selected-box {{isIphoneX ? 'selectedX-box':''}}" bindtap='lookSelectedEvent'>
+      <image class="look-icon" src='/images/preview@3x.png'></image>
+      <text>查看已选</text>
+    </view>
+  </view>
+  <view class="finish-submit" bindtap='finishChosenEvent'>完成选题</view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

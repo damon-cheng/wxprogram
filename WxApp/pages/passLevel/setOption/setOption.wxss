@@ -1,0 +1,191 @@
+/* pages/passLevel/setOption/setOption.wxss */
+
+page {
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+.page {
+  overflow: hidden;
+}
+
+.setting__box {
+  background-color: #fff;
+  overflow: hidden;
+  margin: 20rpx 20rpx 0;
+  border-radius: 16rpx;
+}
+
+.setting__tit {
+  font-size: 36rpx;
+  padding: 0 40rpx;
+  line-height: 104rpx;
+  border-bottom: 2rpx solid #d6d6db;
+}
+
+.setting__container {
+  padding-left: 40rpx;
+}
+
+.section {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  line-height: 116rpx;
+  border-bottom: 2rpx solid #d6d6db;
+  padding-right: 40rpx;
+}
+
+ .none-border {
+  border: none;
+} 
+
+.items__tit input {
+  width: 120rpx;
+  margin-left: 12rpx;
+}
+
+.items__set {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.items__set input {
+  width: 146rpx;
+  font-size: 36rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.btn__wrap {
+  margin: 45rpx 0;
+  padding: 0 20rpx;
+}
+
+.submit-btn {
+  margin-top: 32rpx;
+  border-radius: 16rpx;
+  background-color: #1ea0fa !important;
+  box-shadow: 0 8rpx 24rpx rgba(30, 123, 250, 0.3);
+}
+
+/* .btn__wrap button {
+  margin: 0;
+  width: 45%;
+} */
+
+/* .btn__wrap button:nth-child(1) {
+  background-color: #1ea0fa;
+}
+
+.btn__wrap button:nth-child(2) {
+  margin-left: 20rpx;
+} */
+
+.leftFlex {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.input_time {
+  width: 100rpx !important;
+}
+
+.input_Date {
+  width: 200rpx !important;
+}
+
+.input_Date_new {
+  margin-right: 20rpx;
+  width: 300rpx !important;
+}
+
+.col_80 {
+  color: #b3b3b3;
+}
+
+
+.cancel-btn {
+  margin-top: 25rpx;
+  border-radius: 16rpx;
+}
+
+.clearTime {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/* 自定义模态框 Start */
+.modal-frame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550rpx;
+  background-color: #fff;
+  z-index: 99999999;
+  border-radius: 6rpx;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  margin-top: 30rpx;
+}
+
+.modal-word {
+  font-size: 28rpx;
+  color: #888888;
+  margin-top: 10rpx;
+}
+
+.modal-btn {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 15rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.modal-btn button {
+  width: 50%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fff;
+  
+}
+
+.modal-submit {
+  color: #5bc902;
+}
+
+.modal-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  width: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.modal-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50001;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+button::after {
+  border: none;
+}
+
+/* 自定义模态框 End */
